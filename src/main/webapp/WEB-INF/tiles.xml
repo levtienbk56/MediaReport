@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN" "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+
+	<!-- Base definition -->
+	<definition name="base.definition" template="/WEB-INF/views/classic.jsp">
+		<put-attribute name="title" value=""></put-attribute>
+		<put-attribute name="page-header"
+			value="/WEB-INF/views/basefragments/_header.jsp"></put-attribute>
+		<put-attribute name="page-body" value=""></put-attribute>
+		<put-attribute name="page-footer"
+			value="/WEB-INF/views/basefragments/_footer.jsp"></put-attribute>
+	</definition>
+
+	<!-- Temp definition -->
+	<definition name="temp.definition" template="/WEB-INF/views/temp.jsp">
+		<put-attribute name="title" value=""></put-attribute>
+		<put-attribute name="page-header" value="/WEB-INF/views/basefragments/_header.jsp"></put-attribute>
+		<put-attribute name="page-body" value=""></put-attribute>
+		<put-attribute name="page-footer" value="/WEB-INF/views/basefragments/_footer.jsp"></put-attribute>
+	</definition>
+
+	<!-- Home page -->
+	<definition name="homePage" extends="base.definition">
+		<put-attribute name="title" value="Spring framework"></put-attribute>
+		<put-attribute name="page-body"
+			value="/WEB-INF/views/bodyfragments/home.jsp"></put-attribute>
+	</definition>
+
+	<!-- google graph -->
+	<definition name="googleChartPage" extends="temp.definition">
+		<put-attribute name="title" value="Google Chart　ライブラリ"></put-attribute>
+		<put-attribute name="page-body"
+			value="/WEB-INF/views/bodyfragments/google_chart.jsp"></put-attribute>
+	</definition>
+	
+	<!-- d3js graph -->
+	<definition name="d3jsPage" extends="temp.definition">
+		<put-attribute name="title" value="D3js　ライブラリ"></put-attribute>
+		<put-attribute name="page-body"
+			value="/WEB-INF/views/bodyfragments/d3js.jsp"></put-attribute>
+	</definition>
+	
+	<!-- chartjs graph -->
+	<definition name="chartjsPage" extends="temp.definition">
+		<put-attribute name="title" value="Chart.js ライブラリ"></put-attribute>
+		<put-attribute name="page-body"
+			value="/WEB-INF/views/bodyfragments/chartjs.jsp"></put-attribute>
+	</definition>
+
+</tiles-definitions>

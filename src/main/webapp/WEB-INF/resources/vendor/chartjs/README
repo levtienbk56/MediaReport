@@ -1,0 +1,5 @@
+Version 2.5 brings some exciting new features to Chart.js. Now, configuration options can be updated at runtime (with some exceptions) just by changing the chart.config.options object and calling chart.update().
+
+More powerful plugins that can be added to an individual chart (instead of globally), but also disabled on a per chart basis. This gives you fine grained control over when plugins interact with your charts. The plugins were changed to support cancelling actions by returning false from any before* plugin calls.
+
+Two new extensions have been added: beforeEvent and afterEvent, respectively called before and after the chart responds to an input event such as a mousemove or a click. The plugin is passed a wrapped version of the event, that implements IEvent.
