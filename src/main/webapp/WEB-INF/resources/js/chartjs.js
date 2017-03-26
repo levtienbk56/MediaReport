@@ -1,7 +1,5 @@
-var default_colors = [ '#3366CC', '#DC3912', '#FF9900', '#109618', '#990099',
-		'#3B3EAC', '#0099C6', '#DD4477', '#66AA00', '#B82E2E', '#316395',
-		'#994499', '#22AA99', '#AAAA11', '#6633CC', '#E67300', '#8B0707',
-		'#329262', '#5574A6', '#3B3EAC' ];
+var default_colors = [ '#3366CC', '#DC3912', '#FF9900', '#109618', '#990099', '#3B3EAC', '#0099C6', '#DD4477', '#66AA00', '#B82E2E', '#316395', '#994499',
+		'#22AA99', '#AAAA11', '#6633CC', '#E67300', '#8B0707', '#329262', '#5574A6', '#3B3EAC' ];
 
 //
 // =========================================================================
@@ -64,7 +62,7 @@ var data_chart2 = {
 		type : "bar",
 		fill : 'false',
 		yAxisID : "y-axis-0", // y-axis 左側
-		backgroundColor : 'rgba(54, 162, 235, 0.2)',
+		backgroundColor : 'rgba(54, 162, 235, 0.5)',
 		borderColor : 'rgba(54, 162, 235, 1)',
 		borderWidth : 1,
 		data : [ 10417, 134901, 10749, 23105, 4546, 1242, 7015 ],
@@ -75,9 +73,7 @@ var data_chart2 = {
 		lineTension : 0.1, // ラインの柔らかさ
 		fill : 'false',
 		borderColor : 'red',
-		backgroundColor : 'transparent', // 注意： ラインの以下の面は
-		// rgba(0,0,0,0.8)
-		// に既定している
+		backgroundColor : 'transparent', // 注意： ラインの以下の面は rgba(0,0,0,0.8) に既定している
 		data : [ 37725, 463640, 71124, 155133, 17686, 4925, 42306 ],
 	} ]
 };
@@ -92,20 +88,29 @@ var options_chart2 = {
 	scales : {
 		yAxes : [ {
 			position : "left",
-			"id" : "y-axis-0",
-			scaleLabel : {
-				display : true,
-				labelString : '応募数　（人）' // 単位名
-			}
-		}, {
-			position : "right",
-			"id" : "y-axis-1",
+			id : "y-axis-0",
 			scaleLabel : {
 				display : true,
 				labelString : '応募数　（人）', // 単位名
-				gridLines : {
-					display : false
-				}
+				fontSize : 18
+			}
+		}, {
+			position : "right",
+			id : "y-axis-1",
+			scaleLabel : {
+				display : true,
+				labelString : '応募数　（人）', // 単位名
+				fontSize : 18
+			},
+			gridLines : {
+				display : false
+			}
+		} ],
+		xAxes : [ {
+			scaleLabel : {
+				display : true,
+				labelString : '地方',
+				fontSize : 18
 			}
 		} ]
 	}
@@ -179,8 +184,23 @@ var options_chart3 = {
 	},
 	scales : {
 		yAxes : [ {
-			stacked : true
-		// 積み立て棒設定
+			// 積み立て棒設定
+			stacked : true,
+			ticks : {
+				max : 100
+			},
+			scaleLabel : {
+				display : true,
+				labelString : '%',
+				fontSize : 20
+			}
+		} ],
+		xAxes : [ {
+			scaleLabel : {
+				display : true,
+				labelString : '媒体名',
+				fontSize : 20
+			}
 		} ]
 	}
 };
