@@ -22,7 +22,7 @@ footer {
 
 .chart {
 	width: 100%;
-	min-height: 600px;
+	min-height: 400px;
 }
 
 div.inline {
@@ -35,7 +35,7 @@ div.inline {
 <div class="container body-container">
 	<div class="row">
 		<div class="col-md-12 text-center">
-			<h1>縦棒グラフ</h1>
+			<h1>縦棒グラフのデモ</h1>
 		</div>
 		<div class="clearfix"></div>
 		<div class="col-md-10">
@@ -44,10 +44,10 @@ div.inline {
 	</div>
 	<div class="row"></div>
 	<hr />
-	
+
 	<div class="row">
 		<div class="col-md-12 text-center">
-			<h1>面グラフ</h1>
+			<h1>組合せのデモ</h1>
 		</div>
 		<div class="clearfix"></div>
 		<div class="col-md-10">
@@ -56,10 +56,10 @@ div.inline {
 	</div>
 	<div class="row"></div>
 	<hr />
-	
-		<div class="row">
+
+	<div class="row">
 		<div class="col-md-12 text-center">
-			<h1>面グラフ</h1>
+			<h1>積み立てグラフのデモ</h1>
 		</div>
 		<div class="clearfix"></div>
 		<div class="col-md-10">
@@ -68,16 +68,40 @@ div.inline {
 	</div>
 	<div class="row"></div>
 	<hr />
-	
+	<!--  
 	<div class="row">
 		<div class="col-md-12 text-center">
-			<h1>インタラクティブグラフ</h1>
+			<h1>マップのデモ</h1>
 		</div>
 		<div id="map-container"></div>
 		<div id="chart_div4" class="chart"></div>
 	</div>
 	<div class="row"></div>
 	<hr/>
+	-->
+	<div class="row">
+		<div class="col-md-12 text-center">
+			<h1>マップのデモ</h1>
+		</div>
+		<div class="clearfix"></div>
+		<div class="col-md-10">
+			<div id="chart_div5"></div>
+		</div>
+	</div>
+	<div class="row"></div>
+	<hr />
+	
+	<div class="row">
+		<div class="col-md-12 text-center">
+			<h1>コントロールとダッシュボードのデモ</h1>
+		</div>
+		<div class="clearfix"></div>
+		<div class="col-md-10">
+			<div id="chart_div6" class="chart"></div>
+		</div>
+	</div>
+	<div class="row"></div>
+	<hr />
 </div>
 
 <!-- Google api JavaScript -->
