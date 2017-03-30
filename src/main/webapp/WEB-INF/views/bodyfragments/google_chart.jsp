@@ -38,7 +38,7 @@ div.inline {
 			<h1>縦棒グラフのデモ</h1>
 		</div>
 		<div class="clearfix"></div>
-		<div class="col-md-10">
+		<div class="col-md-12">
 			<div id="chart_div1" class="chart"></div>
 		</div>
 	</div>
@@ -50,7 +50,7 @@ div.inline {
 			<h1>組合せのデモ</h1>
 		</div>
 		<div class="clearfix"></div>
-		<div class="col-md-10">
+		<div class="col-md-12">
 			<div id="chart_div2" class="chart"></div>
 		</div>
 	</div>
@@ -62,7 +62,7 @@ div.inline {
 			<h1>積み立てグラフのデモ</h1>
 		</div>
 		<div class="clearfix"></div>
-		<div class="col-md-10">
+		<div class="col-md-12">
 			<div id="chart_div3" class="chart"></div>
 		</div>
 	</div>
@@ -84,8 +84,20 @@ div.inline {
 			<h1>マップのデモ</h1>
 		</div>
 		<div class="clearfix"></div>
-		<div class="col-md-10">
+		<div class="col-md-12">
 			<div id="chart_div5"></div>
+		</div>
+	</div>
+	<div class="row"></div>
+	<hr />
+	
+	<div class="row">
+		<div class="col-md-12 text-center">
+			<h1>グラフの一部を「破線」等で表現できるか？</h1>
+		</div>
+		<div class="clearfix"></div>
+		<div class="col-md-12">
+			<div id="chart_div6" class="chart"></div>
 		</div>
 	</div>
 	<div class="row"></div>
@@ -96,8 +108,20 @@ div.inline {
 			<h1>コントロールとダッシュボードのデモ</h1>
 		</div>
 		<div class="clearfix"></div>
-		<div class="col-md-10">
-			<div id="chart_div6" class="chart"></div>
+		<div class="col-md-12">
+			<div id="chart_div7" class="chart"></div>
+		</div>
+	</div>
+	<div class="row"></div>
+	<hr />
+	
+	<div class="row">
+		<div class="col-md-12 text-center">
+			<h1>コントロールとダッシュボードのデモ</h1>
+		</div>
+		<div class="clearfix"></div>
+		<div class="col-md-12">
+			<div id="chart_div8" class="chart"></div>
 		</div>
 	</div>
 	<div class="row"></div>
