@@ -262,7 +262,7 @@ function drawChart5() {
 }
 
 // =========================================================================
-// CHART6: DASHED LINE （グラフの一部を「破線」等で表現できるか）
+// CHART6: DASHED LINE 1　（グラフの一部を「破線」等で表現できるか）
 // =========================================================================
 google.setOnLoadCallback(drawChart6);
 
@@ -317,3 +317,62 @@ function drawChart6() {
 	var chart = new google.visualization.LineChart(div);
 	chart.draw(data, option);
 }
+
+
+//=========================================================================
+//CHART6: DASHED LINE 2　（グラフの一部を「破線」等で表現できるか）
+//=========================================================================
+google.setOnLoadCallback(drawChart7);
+
+function drawChart7() {
+	
+	var data = new google.visualization.DataTable();
+	data.addColumn('date', '年月');
+	data.addColumn('number', 'バイトル');
+	data.addColumn({type:'boolean',role:'certainty'});
+	data.addColumn('number', 'Weban');
+	data.addColumn({type:'boolean',role:'certainty'});
+	
+	data.addRows([ 
+	        [ new Date(2017,0), 1203, true, 0879, true  ],
+			[ new Date(2017,1), 1442, true, 1123, true ], 
+			[ new Date(2017,2), 1734, true, 1000, true ],
+			[ new Date(2017,3), 1445, true, 0703, true  ],
+			[ new Date(2017,4), 1600, true, 1120, true ],
+			[ new Date(2017,5), 1790, false, 1389, false ], 
+			[ new Date(2017,6), 1899, false, 1333, false  ],
+			[ new Date(2017,7), 1930, false, 1120, false  ] ]);
+	
+	
+	var option = {
+//		height : getChartHeight(),
+		animation : {
+			duration : 1000,
+			easing : 'out',
+			startup : true
+		},
+		legend : {
+			position : 'top',
+			alignment : 'center'
+		},
+		series : {
+			2 : {
+				lineDashStyle : [ 5, 5 ]
+			},
+			3 : {
+				lineDashStyle : [ 5, 5 ]
+			}
+		},
+		colors : [ '#ff6384', '#36a2eb', '#ff6384', '#36a2eb' ],
+		hAxis : {
+			gridlines : {
+				color : 'LightGrey'
+			}
+		}
+	};
+
+	var div = document.getElementById('chart_div7');
+	var chart = new google.visualization.LineChart(div);
+	chart.draw(data, option);
+}
+
