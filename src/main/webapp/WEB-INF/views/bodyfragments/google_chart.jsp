@@ -35,7 +35,7 @@ div.inline {
 <div class="container body-container">
 	<div class="row">
 		<div class="col-md-12 text-center">
-			<h3>縦棒グラフのデモ</h3>
+			<h3><a name="column-chart">縦棒グラフのデモ</a></h3>
 		</div>
 		<div class="clearfix"></div>
 		<div class="col-md-12">
@@ -47,7 +47,7 @@ div.inline {
 
 	<div class="row">
 		<div class="col-md-12 text-center">
-			<h3>組合せのデモ</h3>
+			<h3><a name="combo-chart">組合せのデモ</a></h3>
 		</div>
 		<div class="clearfix"></div>
 		<div class="col-md-12">
@@ -59,7 +59,7 @@ div.inline {
 
 	<div class="row">
 		<div class="col-md-12 text-center">
-			<h3>積み立てグラフのデモ</h3>
+			<h3><a name="stacked-chart">積み立てグラフのデモ</a></h3>
 		</div>
 		<div class="clearfix"></div>
 		<div class="col-md-12">
@@ -81,7 +81,7 @@ div.inline {
 	-->
 	<div class="row">
 		<div class="col-md-12 text-center">
-			<h3>マップのデモ</h3>
+			<h3><a name="map">マップのデモ</a></h3>
 		</div>
 		<div class="clearfix"></div>
 		<div class="col-md-12">
@@ -93,7 +93,7 @@ div.inline {
 	
 	<div class="row">
 		<div class="col-md-12 text-center">
-			<h3>グラフの一部を「破線」等で表現できるか　＃１？</h3>
+			<h3><a name="dashed-line">グラフの一部を「破線」等で表現できるか　＃１？</a></h3>
 		</div>
 		<div class="clearfix"></div>
 		<div class="col-md-12">
@@ -117,7 +117,7 @@ div.inline {
 	
 	<div class="row">
 		<div class="col-md-12 text-center">
-			<h3>ズーム可能性のデモ</h3>
+			<h3><a name="zoom-and-pan">ズーム可能性のデモ</a></h3>
 		</div>
 		<div class="clearfix"></div>
 		<div class="col-md-12">

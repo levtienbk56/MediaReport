@@ -577,7 +577,14 @@ function drawChart9() {
 			    titleTextStyle: {
 			      color: '#333'
 			    },
-			    format: 'yyyy年MM月'
+			    gridLines : {
+			    	count : -1,
+			    	units : {
+			    		days : {
+			    			format : ['yy MM dd']
+			    		}
+			    	}
+			    }
 		  },
 		  vAxis: {
 			    title : '人', 
