@@ -19,6 +19,11 @@ google.load('visualization', '1', {
 	packages : [ 'geochart' ],
 	language : 'ja'
 });
+//=== load annotationchart lib ===
+google.load('visualization', '1', {
+	packages : [ 'annotationchart' ],
+	language : 'ja'
+});
 
 var default_colors = [ '#3366CC', '#DC3912', '#FF9900', '#109618', '#990099',
 		'#3B3EAC', '#0099C6', '#DD4477', '#66AA00', '#B82E2E', '#316395',
@@ -529,7 +534,7 @@ function drawChart8() {
       maxZoomIn: 5.0,
       maxZoomOut: 1		// ズームの限度
     },
-    colors: ['#D44E41'],
+//  colors: ['#D44E41'],
     legend : {
     	position : 'top',
 		alignment : 'center'    	
@@ -541,7 +546,7 @@ function drawChart8() {
 }
 
 //=========================================================================
-//CHART8:  ZOOM & PAN
+//CHART9:  ZOOM & PAN
 //=========================================================================
 google.setOnLoadCallback(drawChart9);
 
@@ -597,5 +602,25 @@ function drawChart9() {
 	};
 	
 	var chart = new google.visualization.LineChart(document.getElementById('chart_div9'));
+	chart.draw(data, options);
+}
+
+
+//=========================================================================
+//CHART9:  ZOOM & PAN
+//=========================================================================
+google.setOnLoadCallback(drawChart10);
+
+function drawChart10() {
+	var data = google.visualization.arrayToDataTable(data_zoom_chart);
+	
+	var options = {
+		  displayAnnotations: true,
+		  dateFormat : 'yyyy年MM月dd日',
+		  displayAnnotationsFilter : true,
+		  min : 0
+	};
+	
+	var chart = new google.visualization.AnnotationChart(document.getElementById('chart_div10'));
 	chart.draw(data, options);
 }

@@ -141,7 +141,7 @@ div.inline {
 	
 	<div class="row">
 		<div class="col-md-12">
-			<h3>コントロールとダッシュボードのデモ</h3>
+			<h3>ズーム可能性のデモ　＃３：　Annotation Chart</h3>
 		</div>
 		<div class="clearfix"></div>
 		<div class="col-md-12">
@@ -173,5 +173,7 @@ div.inline {
 	src="${pageContext.servletContext.contextPath}/resources/vendor/jquery-japan-map/jquery-japan-map.min.js"></script>
 
 <!--  Custom google js -->
+<script
+	src="${pageContext.servletContext.contextPath}/resources/js/google_chart_big_data.js"></script>
 <script
 	src="${pageContext.servletContext.contextPath}/resources/js/google_chart.js"></script>
