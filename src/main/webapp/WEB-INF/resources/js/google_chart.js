@@ -607,7 +607,7 @@ function drawChart9() {
 
 
 //=========================================================================
-//CHART9:  ZOOM & PAN
+//CHART10:  ZOOM & PAN
 //=========================================================================
 google.setOnLoadCallback(drawChart10);
 
@@ -622,5 +622,25 @@ function drawChart10() {
 	};
 	
 	var chart = new google.visualization.AnnotationChart(document.getElementById('chart_div10'));
+	chart.draw(data, options);
+}
+
+
+//=========================================================================
+//CHART10:  ZOOM & PAN
+//=========================================================================
+google.setOnLoadCallback(drawChart11);
+
+function drawChart11() {
+	var data = google.visualization.arrayToDataTable(big_data); // see google_chart_big_data.js
+	
+	var options = {
+		  displayAnnotations: true,
+		  dateFormat : 'yyyy年MM月dd日',
+		  displayAnnotationsFilter : true,
+		  min : 0
+	};
+	
+	var chart = new google.visualization.AnnotationChart(document.getElementById('chart_div11'));
 	chart.draw(data, options);
 }
