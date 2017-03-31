@@ -34,7 +34,7 @@ div.inline {
 
 <div class="container body-container">
 	<div class="row">
-		<div class="col-md-12 text-center">
+		<div class="col-md-12">
 			<h3><a name="column-chart">縦棒グラフのデモ</a></h3>
 		</div>
 		<div class="clearfix"></div>
@@ -46,7 +46,7 @@ div.inline {
 	<hr />
 
 	<div class="row">
-		<div class="col-md-12 text-center">
+		<div class="col-md-12">
 			<h3><a name="combo-chart">組合せのデモ</a></h3>
 		</div>
 		<div class="clearfix"></div>
@@ -58,7 +58,7 @@ div.inline {
 	<hr />
 
 	<div class="row">
-		<div class="col-md-12 text-center">
+		<div class="col-md-12">
 			<h3><a name="stacked-chart">積み立てグラフのデモ</a></h3>
 		</div>
 		<div class="clearfix"></div>
@@ -70,7 +70,7 @@ div.inline {
 	<hr />
 	<!--  
 	<div class="row">
-		<div class="col-md-12 text-center">
+		<div class="col-md-12">
 			<h3>マップのデモ</h3>
 		</div>
 		<div id="map-container"></div>
@@ -80,7 +80,7 @@ div.inline {
 	<hr/>
 	-->
 	<div class="row">
-		<div class="col-md-12 text-center">
+		<div class="col-md-12">
 			<h3><a name="map">マップのデモ</a></h3>
 		</div>
 		<div class="clearfix"></div>
@@ -92,7 +92,7 @@ div.inline {
 	<hr />
 	
 	<div class="row">
-		<div class="col-md-12 text-center">
+		<div class="col-md-12">
 			<h3><a name="dashed-line">グラフの一部を「破線」等で表現できるか　＃１？</a></h3>
 		</div>
 		<div class="clearfix"></div>
@@ -104,7 +104,7 @@ div.inline {
 	<hr />
 	
 	<div class="row">
-		<div class="col-md-12 text-center">
+		<div class="col-md-12">
 			<h3>グラフの一部を「破線」等で表現できるか　＃２？</h3>
 		</div>
 		<div class="clearfix"></div>
@@ -116,7 +116,7 @@ div.inline {
 	<hr />
 	
 	<div class="row">
-		<div class="col-md-12 text-center">
+		<div class="col-md-12">
 			<h3><a name="zoom-and-pan">ズーム可能性のデモ　＃１：スクロール</a></h3>
 		</div>
 		<div class="clearfix"></div>
@@ -128,7 +128,7 @@ div.inline {
 	<hr />
 	
 	<div class="row">
-		<div class="col-md-12 text-center">
+		<div class="col-md-12">
 			<h3>ズーム可能性のデモ　＃２：ドラッグ　（カスタムスタイル有り）</h3>
 		</div>
 		<div class="clearfix"></div>
@@ -140,7 +140,7 @@ div.inline {
 	<hr />
 	
 	<div class="row">
-		<div class="col-md-12 text-center">
+		<div class="col-md-12">
 			<h3>コントロールとダッシュボードのデモ</h3>
 		</div>
 		<div class="clearfix"></div>
@@ -152,7 +152,7 @@ div.inline {
 	
 	
 	<div class="row">
-		<div class="col-md-12 text-center">
+		<div class="col-md-12">
 			<h3>コントロールとダッシュボードのデモ</h3>
 		</div>
 		<div class="clearfix"></div>

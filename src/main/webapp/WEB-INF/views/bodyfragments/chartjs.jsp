@@ -35,10 +35,10 @@ div.inline {
 <div class="container body-container">
 	<div class="row">
 		<div class="col-md-12">
-			<h1>縦棒グラフのデモ</h1>
+			<h3>縦棒グラフのデモ</h3>
 		</div>
 		<div class="clearfix"></div>
-		<div class="col-md-10 text-center">
+		<div class="col-md-10">
 			<canvas id="chart1" width="600" height="400"></canvas>
 		</div>
 	</div>
@@ -47,10 +47,10 @@ div.inline {
 
 	<div class="row">
 		<div class="col-md-12">
-			<h1>組合せのデモ</h1>
+			<h3>組合せのデモ</h3>
 		</div>
 		<div class="clearfix"></div>
-		<div class="col-md-10 text-center">
+		<div class="col-md-10">
 			<canvas id="chart2" width="600" height="400"></canvas>
 		</div>
 	</div>
@@ -59,10 +59,10 @@ div.inline {
 
 	<div class="row">
 		<div class="col-md-12 ">
-			<h1>積み立てグラフ</h1>
+			<h3>積み立てグラフ</h3>
 		</div>
 		<div class="clearfix"></div>
-		<div class="col-md-10 text-center">
+		<div class="col-md-10">
 			<canvas id="chart3" width="600" height="400"></canvas>
 		</div>
 	</div>
