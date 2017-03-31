@@ -385,81 +385,129 @@ function drawChart7() {
 }
 
 
+//========================================================================
+//zoom chart data
+var data_zoom_chart = [
+            ['Year', 'ABC媒体'],
+  		  [new Date(2016, 10, 02), 33],
+ 		  [new Date(2016, 10, 05), 42],
+ 		  [new Date(2016, 10, 09), 45],
+ 		  [new Date(2016, 10, 15), 36],
+ 		  [new Date(2016, 10, 18), 33],
+ 		  [new Date(2016, 10, 22), 38],
+ 		  [new Date(2016, 10, 25), 52],
+ 		  [new Date(2016, 10, 28), 58],
+ 		  [new Date(2016, 11, 02), 45],
+ 		  [new Date(2016, 11, 03), 39],
+ 		  [new Date(2016, 11, 07), 40],
+ 		  [new Date(2016, 11, 10), 56],
+ 		  [new Date(2016, 11, 12), 60],
+ 		  [new Date(2016, 11, 14), 53],
+ 		  [new Date(2016, 11, 17), 67],
+ 		  [new Date(2016, 11, 19), 54],
+ 		  [new Date(2016, 11, 22), 44],
+ 		  [new Date(2016, 11, 23), 49],
+ 		  [new Date(2016, 11, 25), 58],
+ 		  [new Date(2016, 11, 27), 60],
+ 		  [new Date(2017, 00, 02), 39],   // 2017年2月2日: 30人
+		  [new Date(2017, 00, 06), 43],
+		  [new Date(2017, 00, 10), 55],
+		  [new Date(2017, 00, 18), 45],
+		  [new Date(2017, 00, 23), 49],
+		  [new Date(2017, 00, 27), 53],
+ 		  [new Date(2017, 01, 02), 49],   // 2017年2月2日: 30人
+ 		  [new Date(2017, 01, 03), 47],
+ 		  [new Date(2017, 01, 06), 43],
+ 		  [new Date(2017, 01, 10), 30],
+ 		  [new Date(2017, 01, 12), 70],
+ 		  [new Date(2017, 01, 15), 45],
+ 		  [new Date(2017, 01, 19), 99],
+ 		  [new Date(2017, 01, 22), 72],
+ 		  [new Date(2017, 01, 24), null],
+ 		  [new Date(2017, 01, 25), 89],
+ 		  [new Date(2017, 01, 29), 60],
+ 		  [new Date(2017, 02, 02), 43],
+ 		  [new Date(2017, 02, 04), 50],
+ 		  [new Date(2017, 02, 06), 52],
+ 		  [new Date(2017, 02, 10), 40],
+ 		  [new Date(2017, 02, 12), 70],
+ 		  [new Date(2017, 02, 15), 45],
+ 		  [new Date(2017, 02, 19), 79],
+ 		  [new Date(2017, 02, 20), 82],
+ 		  [new Date(2017, 02, 24), 63],
+ 		  [new Date(2017, 02, 25), 89],
+ 		  [new Date(2017, 02, 29), 70],
+ 		  [new Date(2017, 03, 01), 63],
+ 		  [new Date(2017, 03, 03), 60],
+ 		  [new Date(2017, 03, 06), 62],
+ 		  [new Date(2017, 03, 09), 50],
+ 		  [new Date(2017, 03, 13), 50],
+ 		  [new Date(2017, 03, 15), 55],
+ 		  [new Date(2017, 03, 19), 69],
+ 		  [new Date(2017, 03, 20), 62],
+ 		  [new Date(2017, 03, 24), 63],
+ 		  [new Date(2017, 03, 25), 59],
+ 		  [new Date(2017, 03, 28), 50],
+ 		  [new Date(2017, 04, 01), 63],
+ 		  [new Date(2017, 04, 02), 66],
+ 		  [new Date(2017, 04, 03), 77],
+ 		  [new Date(2017, 04, 04), 67],
+ 		  [new Date(2017, 04, 05), 55],
+ 		  [new Date(2017, 04, 06), 45],
+ 		  [new Date(2017, 04, 07), 49],
+ 		  [new Date(2017, 04, 08), 67],
+ 		  [new Date(2017, 04, 09), 56],
+ 		  [new Date(2017, 04, 10), 40],
+ 		  [new Date(2017, 04, 11), 52],
+ 		  [new Date(2017, 04, 12), 60],
+ 		  [new Date(2017, 04, 13), 60],
+ 		  [new Date(2017, 04, 14), 65],
+ 		  [new Date(2017, 04, 15), 79],
+ 		  [new Date(2017, 04, 16), 72],
+ 		  [new Date(2017, 04, 17), 63],
+ 		  [new Date(2017, 04, 18), 69],
+ 		  [new Date(2017, 04, 19), 67],
+ 		  [new Date(2017, 04, 20), 77],
+ 		  [new Date(2017, 04, 21), 87],
+ 		  [new Date(2017, 04, 22), 77],
+ 		  [new Date(2017, 04, 23), 90],
+ 		  [new Date(2017, 04, 24), 66],
+ 		  [new Date(2017, 04, 25), 70],
+ 		  [new Date(2017, 04, 26), 60],
+ 		  [new Date(2017, 04, 27), 80],
+ 		  [new Date(2017, 04, 28), 70],
+ 		  [new Date(2017, 04, 29), 80],
+ 		  [new Date(2017, 05, 02), 83],
+ 		  [new Date(2017, 05, 03), 60],
+ 		  [new Date(2017, 05, 06), 52],
+ 		  [new Date(2017, 05, 10), 50],
+ 		  [new Date(2017, 05, 12), 50],
+ 		  [new Date(2017, 05, 15), 45],
+ 		  [new Date(2017, 05, 19), 79],
+ 		  [new Date(2017, 05, 20), 76],
+ 		  [new Date(2017, 05, 24), 93],
+ 		  [new Date(2017, 05, 25), 90],
+ 		  [new Date(2017, 05, 29), 78],
+ 		  [new Date(2017, 06, 02), 43],
+ 		  [new Date(2017, 06, 03), 60],
+ 		  [new Date(2017, 06, 06), 52],
+ 		  [new Date(2017, 06, 10), 50],
+ 		  [new Date(2017, 06, 12), 70],
+ 		  [new Date(2017, 06, 15), 65],
+ 		  [new Date(2017, 06, 16), 99],
+ 		  [new Date(2017, 06, 20), 81],
+ 		  [new Date(2017, 06, 22), 93],
+ 		  [new Date(2017, 06, 25), 80],
+ 		  [new Date(2017, 06, 27), 98],
+            ];
+
 //=========================================================================
 //CHART8:  ZOOM & PAN
 //=========================================================================
 google.setOnLoadCallback(drawChart8);
 
 function drawChart8() {
-  var data = google.visualization.arrayToDataTable([
-    ['Year', 'ABC媒体'],
-    [new Date(2017, 01, 02), 30],   // 2017年2月2日: 30人
-    [new Date(2017, 01, 03), 33],
-    [new Date(2017, 01, 06), 43],
-    [new Date(2017, 01, 10), 30],
-    [new Date(2017, 01, 12), 70],
-    [new Date(2017, 01, 15), 45],
-    [new Date(2017, 01, 19), 99],
-    [new Date(2017, 01, 22), 72],
-    [new Date(2017, 01, 24), null],
-    [new Date(2017, 01, 25), 89],
-    [new Date(2017, 01, 29), 60],
-    [new Date(2017, 02, 02), 43],
-    [new Date(2017, 02, 04), 50],
-    [new Date(2017, 02, 06), 52],
-    [new Date(2017, 02, 10), 40],
-    [new Date(2017, 02, 12), 70],
-    [new Date(2017, 02, 15), 45],
-    [new Date(2017, 02, 19), 79],
-    [new Date(2017, 02, 20), 82],
-    [new Date(2017, 02, 24), 63],
-    [new Date(2017, 02, 25), 89],
-    [new Date(2017, 02, 29), 70],
-    [new Date(2017, 03, 01), 63],
-    [new Date(2017, 03, 03), 60],
-    [new Date(2017, 03, 06), 62],
-    [new Date(2017, 03, 09), 50],
-    [new Date(2017, 03, 13), 50],
-    [new Date(2017, 03, 15), 55],
-    [new Date(2017, 03, 19), 69],
-    [new Date(2017, 03, 20), 62],
-    [new Date(2017, 03, 24), 63],
-    [new Date(2017, 03, 25), 59],
-    [new Date(2017, 03, 28), 50],
-    [new Date(2017, 04, 01), 63],
-    [new Date(2017, 04, 03), 40],
-    [new Date(2017, 04, 06), 52],
-    [new Date(2017, 04, 09), 60],
-    [new Date(2017, 04, 12), 60],
-    [new Date(2017, 04, 14), 65],
-    [new Date(2017, 04, 17), 79],
-    [new Date(2017, 04, 20), 72],
-    [new Date(2017, 04, 24), 63],
-    [new Date(2017, 04, 25), 69],
-    [new Date(2017, 04, 29), 50],
-    [new Date(2017, 05, 02), 83],
-    [new Date(2017, 05, 03), 60],
-    [new Date(2017, 05, 06), 52],
-    [new Date(2017, 05, 10), 50],
-    [new Date(2017, 05, 12), 50],
-    [new Date(2017, 05, 15), 45],
-    [new Date(2017, 05, 19), 79],
-    [new Date(2017, 05, 20), 76],
-    [new Date(2017, 05, 24), 93],
-    [new Date(2017, 05, 25), 90],
-    [new Date(2017, 05, 29), 78],
-    [new Date(2017, 06, 02), 43],
-    [new Date(2017, 06, 03), 60],
-    [new Date(2017, 06, 06), 52],
-    [new Date(2017, 06, 10), 50],
-    [new Date(2017, 06, 12), 70],
-    [new Date(2017, 06, 15), 65],
-    [new Date(2017, 06, 16), 99],
-    [new Date(2017, 06, 20), 81],
-    [new Date(2017, 06, 22), 93],
-    [new Date(2017, 06, 25), 80],
-    [new Date(2017, 06, 27), 98],
-  ]);
+	var data = google.visualization.arrayToDataTable(data_zoom_chart);
 
   var options = {
     title: 'ABC媒体の応募数',
@@ -492,83 +540,13 @@ function drawChart8() {
   chart.draw(data, options);
 }
 
-
-
 //=========================================================================
 //CHART8:  ZOOM & PAN
 //=========================================================================
 google.setOnLoadCallback(drawChart9);
 
 function drawChart9() {
-	var data = google.visualization.arrayToDataTable([
-		  ['Year', 'ABC媒体'],
-		  [new Date(2017, 01, 02), 30],   // 2017年2月2日: 30人
-		  [new Date(2017, 01, 03), 33],
-		  [new Date(2017, 01, 06), 43],
-		  [new Date(2017, 01, 10), 30],
-		  [new Date(2017, 01, 12), 70],
-		  [new Date(2017, 01, 15), 45],
-		  [new Date(2017, 01, 19), 99],
-		  [new Date(2017, 01, 22), 72],
-		  [new Date(2017, 01, 24), null],
-		  [new Date(2017, 01, 25), 89],
-		  [new Date(2017, 01, 29), 60],
-		  [new Date(2017, 02, 02), 43],
-		  [new Date(2017, 02, 04), 50],
-		  [new Date(2017, 02, 06), 52],
-		  [new Date(2017, 02, 10), 40],
-		  [new Date(2017, 02, 12), 70],
-		  [new Date(2017, 02, 15), 45],
-		  [new Date(2017, 02, 19), 79],
-		  [new Date(2017, 02, 20), 82],
-		  [new Date(2017, 02, 24), 63],
-		  [new Date(2017, 02, 25), 89],
-		  [new Date(2017, 02, 29), 70],
-		  [new Date(2017, 03, 01), 63],
-		  [new Date(2017, 03, 03), 60],
-		  [new Date(2017, 03, 06), 62],
-		  [new Date(2017, 03, 09), 50],
-		  [new Date(2017, 03, 13), 50],
-		  [new Date(2017, 03, 15), 55],
-		  [new Date(2017, 03, 19), 69],
-		  [new Date(2017, 03, 20), 62],
-		  [new Date(2017, 03, 24), 63],
-		  [new Date(2017, 03, 25), 59],
-		  [new Date(2017, 03, 28), 50],
-		  [new Date(2017, 04, 01), 63],
-		  [new Date(2017, 04, 03), 40],
-		  [new Date(2017, 04, 06), 52],
-		  [new Date(2017, 04, 09), 60],
-		  [new Date(2017, 04, 12), 60],
-		  [new Date(2017, 04, 14), 65],
-		  [new Date(2017, 04, 17), 79],
-		  [new Date(2017, 04, 20), 72],
-		  [new Date(2017, 04, 24), 63],
-		  [new Date(2017, 04, 25), 69],
-		  [new Date(2017, 04, 29), 50],
-		  [new Date(2017, 05, 02), 83],
-		  [new Date(2017, 05, 03), 60],
-		  [new Date(2017, 05, 06), 52],
-		  [new Date(2017, 05, 10), 50],
-		  [new Date(2017, 05, 12), 50],
-		  [new Date(2017, 05, 15), 45],
-		  [new Date(2017, 05, 19), 79],
-		  [new Date(2017, 05, 20), 76],
-		  [new Date(2017, 05, 24), 93],
-		  [new Date(2017, 05, 25), 90],
-		  [new Date(2017, 05, 29), 78],
-		  [new Date(2017, 06, 02), 43],
-		  [new Date(2017, 06, 03), 60],
-		  [new Date(2017, 06, 06), 52],
-		  [new Date(2017, 06, 10), 50],
-		  [new Date(2017, 06, 12), 70],
-		  [new Date(2017, 06, 15), 65],
-		  [new Date(2017, 06, 16), 99],
-		  [new Date(2017, 06, 20), 81],
-		  [new Date(2017, 06, 22), 93],
-		  [new Date(2017, 06, 25), 80],
-		  [new Date(2017, 06, 27), 98],
-	]);
+	var data = google.visualization.arrayToDataTable(data_zoom_chart);
 	
 	var options = {
 		  title: 'ABC媒体の応募数',
@@ -577,14 +555,17 @@ function drawChart9() {
 			    titleTextStyle: {
 			      color: '#333'
 			    },
-			    gridLines : {
+			    gridlines : {
 			    	count : -1,
 			    	units : {
-			    		days : {
-			    			format : ['yy MM dd']
-			    		}
+			    		months : {format : ['yyyy-MM']}
 			    	}
-			    }
+			    },
+			    minorGridlines: {
+		            units: {
+			            days: {format: ['dd日']}
+		            }
+	            }
 		  },
 		  vAxis: {
 			    title : '人', 
@@ -595,8 +576,8 @@ function drawChart9() {
 			    // 選定でズームできる
 			    actions: ['dragToZoom', 'rightClickToReset'] , 
 			    keepInBounds: true,
-			    maxZoomIn: 5.0,
-			    maxZoomOut: 1		// ズームの限度
+			    maxZoomIn: 12, 		// ズームの限界がない　（既定は4.0です）
+			    maxZoomOut: 1
 		  },
 		  colors: ['#D44E41'],
 		  legend : {
@@ -604,7 +585,14 @@ function drawChart9() {
 					alignment : 'center'    	
 		  },
 		  curveType : 'function',    // 曲線スタイル
-		  pointSize: 5
+		  pointSize: 3,
+		  
+//		  trendlines: {
+//		      0: {
+//		        type: 'exponential',
+//		        color: 'green',
+//		      }
+//		    }
 		  	
 	};
 	

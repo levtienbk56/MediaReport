@@ -117,7 +117,7 @@ div.inline {
 	
 	<div class="row">
 		<div class="col-md-12 text-center">
-			<h3><a name="zoom-and-pan">ズーム可能性のデモ</a></h3>
+			<h3><a name="zoom-and-pan">ズーム可能性のデモ　＃１：スクロール</a></h3>
 		</div>
 		<div class="clearfix"></div>
 		<div class="col-md-12">
@@ -129,7 +129,7 @@ div.inline {
 	
 	<div class="row">
 		<div class="col-md-12 text-center">
-			<h3>ズーム可能性のデモ　（カスタムスタイル）</h3>
+			<h3>ズーム可能性のデモ　＃２：ドラッグ　（カスタムスタイル有り）</h3>
 		</div>
 		<div class="clearfix"></div>
 		<div class="col-md-12">
