@@ -243,7 +243,7 @@ function drawChart3() {
 }
 
 // =========================================================================
-// GEOCHART
+// CHART5: GEOCHART (マップ)
 // =========================================================================
 google.setOnLoadCallback(drawChart5);
 
@@ -281,7 +281,7 @@ function drawChart6() {
 			[ new Date(2017,2), 1734, 1000, null, null ],
 			[ new Date(2017,3), 1445, 0703, null, null ],
 			[ new Date(2017,4), 1600, 1120, 1600, 1120 ],
-			[ new Date(2017,5), null, null, 1790, 1389 ], 
+			[ new Date(2017,5), null, null, 1520, 1389 ], 
 			[ new Date(2017,6), null, null, 1899, 1333 ],
 			[ new Date(2017,7), null, null, 1930, 1120 ] ]);
 	
@@ -320,7 +320,7 @@ function drawChart6() {
 
 
 //=========================================================================
-//CHART6: DASHED LINE 2　（グラフの一部を「破線」等で表現できるか）
+//CHART7: DASHED LINE 2　（グラフの一部を「破線」等で表現できるか）
 //=========================================================================
 google.setOnLoadCallback(drawChart7);
 
@@ -339,7 +339,7 @@ function drawChart7() {
 			[ new Date(2017,2), 1734, true, 1000, true ],
 			[ new Date(2017,3), 1445, true, 0703, true  ],
 			[ new Date(2017,4), 1600, true, 1120, true ],
-			[ new Date(2017,5), 1790, false, 1389, false ], 
+			[ new Date(2017,5), 1520, false, 1389, false ], 
 			[ new Date(2017,6), 1899, false, 1333, false  ],
 			[ new Date(2017,7), 1930, false, 1120, false  ] ]);
 	
@@ -356,8 +356,16 @@ function drawChart7() {
 			alignment : 'center'
 		},
 		series : {
+			0 : {
+				// 曲線スタイル
+				// curveType: 'function'
+			},
+			1 : {
+				// 曲線スタイル
+				// curveType: 'function'
+			},
 			2 : {
-				lineDashStyle : [ 5, 5 ]
+				lineDashStyle : [ 5, 5 ],
 			},
 			3 : {
 				lineDashStyle : [ 5, 5 ]
@@ -376,3 +384,223 @@ function drawChart7() {
 	chart.draw(data, option);
 }
 
+
+//=========================================================================
+//CHART8:  ZOOM & PAN
+//=========================================================================
+google.setOnLoadCallback(drawChart8);
+
+function drawChart8() {
+  var data = google.visualization.arrayToDataTable([
+    ['Year', 'ABC媒体'],
+    [new Date(2017, 01, 02), 30],   // 2017年2月2日: 30人
+    [new Date(2017, 01, 03), 33],
+    [new Date(2017, 01, 06), 43],
+    [new Date(2017, 01, 10), 30],
+    [new Date(2017, 01, 12), 70],
+    [new Date(2017, 01, 15), 45],
+    [new Date(2017, 01, 19), 99],
+    [new Date(2017, 01, 22), 72],
+    [new Date(2017, 01, 24), null],
+    [new Date(2017, 01, 25), 89],
+    [new Date(2017, 01, 29), 60],
+    [new Date(2017, 02, 02), 43],
+    [new Date(2017, 02, 04), 50],
+    [new Date(2017, 02, 06), 52],
+    [new Date(2017, 02, 10), 40],
+    [new Date(2017, 02, 12), 70],
+    [new Date(2017, 02, 15), 45],
+    [new Date(2017, 02, 19), 79],
+    [new Date(2017, 02, 20), 82],
+    [new Date(2017, 02, 24), 63],
+    [new Date(2017, 02, 25), 89],
+    [new Date(2017, 02, 29), 70],
+    [new Date(2017, 03, 01), 63],
+    [new Date(2017, 03, 03), 60],
+    [new Date(2017, 03, 06), 62],
+    [new Date(2017, 03, 09), 50],
+    [new Date(2017, 03, 13), 50],
+    [new Date(2017, 03, 15), 55],
+    [new Date(2017, 03, 19), 69],
+    [new Date(2017, 03, 20), 62],
+    [new Date(2017, 03, 24), 63],
+    [new Date(2017, 03, 25), 59],
+    [new Date(2017, 03, 28), 50],
+    [new Date(2017, 04, 01), 63],
+    [new Date(2017, 04, 03), 40],
+    [new Date(2017, 04, 06), 52],
+    [new Date(2017, 04, 09), 60],
+    [new Date(2017, 04, 12), 60],
+    [new Date(2017, 04, 14), 65],
+    [new Date(2017, 04, 17), 79],
+    [new Date(2017, 04, 20), 72],
+    [new Date(2017, 04, 24), 63],
+    [new Date(2017, 04, 25), 69],
+    [new Date(2017, 04, 29), 50],
+    [new Date(2017, 05, 02), 83],
+    [new Date(2017, 05, 03), 60],
+    [new Date(2017, 05, 06), 52],
+    [new Date(2017, 05, 10), 50],
+    [new Date(2017, 05, 12), 50],
+    [new Date(2017, 05, 15), 45],
+    [new Date(2017, 05, 19), 79],
+    [new Date(2017, 05, 20), 76],
+    [new Date(2017, 05, 24), 93],
+    [new Date(2017, 05, 25), 90],
+    [new Date(2017, 05, 29), 78],
+    [new Date(2017, 06, 02), 43],
+    [new Date(2017, 06, 03), 60],
+    [new Date(2017, 06, 06), 52],
+    [new Date(2017, 06, 10), 50],
+    [new Date(2017, 06, 12), 70],
+    [new Date(2017, 06, 15), 65],
+    [new Date(2017, 06, 16), 99],
+    [new Date(2017, 06, 20), 81],
+    [new Date(2017, 06, 22), 93],
+    [new Date(2017, 06, 25), 80],
+    [new Date(2017, 06, 27), 98],
+  ]);
+
+  var options = {
+    title: 'ABC媒体の応募数',
+    hAxis: {
+      title: '年月日',
+      titleTextStyle: {
+        color: '#333'
+      },
+      format: 'yyyy年MM月'
+    },
+    vAxis: {
+      title : '人', 
+      minValue: 0
+    },
+    // 既定はスクロールでズームできる
+    explorer: {
+      axis: 'horizontal', 	
+      keepInBounds: true,
+      maxZoomIn: 5.0,
+      maxZoomOut: 1		// ズームの限度
+    },
+    colors: ['#D44E41'],
+    legend : {
+    	position : 'top',
+		alignment : 'center'    	
+    }
+  };
+
+  var chart = new google.visualization.LineChart(document.getElementById('chart_div8'));
+  chart.draw(data, options);
+}
+
+
+
+//=========================================================================
+//CHART8:  ZOOM & PAN
+//=========================================================================
+google.setOnLoadCallback(drawChart9);
+
+function drawChart9() {
+	var data = google.visualization.arrayToDataTable([
+		  ['Year', 'ABC媒体'],
+		  [new Date(2017, 01, 02), 30],   // 2017年2月2日: 30人
+		  [new Date(2017, 01, 03), 33],
+		  [new Date(2017, 01, 06), 43],
+		  [new Date(2017, 01, 10), 30],
+		  [new Date(2017, 01, 12), 70],
+		  [new Date(2017, 01, 15), 45],
+		  [new Date(2017, 01, 19), 99],
+		  [new Date(2017, 01, 22), 72],
+		  [new Date(2017, 01, 24), null],
+		  [new Date(2017, 01, 25), 89],
+		  [new Date(2017, 01, 29), 60],
+		  [new Date(2017, 02, 02), 43],
+		  [new Date(2017, 02, 04), 50],
+		  [new Date(2017, 02, 06), 52],
+		  [new Date(2017, 02, 10), 40],
+		  [new Date(2017, 02, 12), 70],
+		  [new Date(2017, 02, 15), 45],
+		  [new Date(2017, 02, 19), 79],
+		  [new Date(2017, 02, 20), 82],
+		  [new Date(2017, 02, 24), 63],
+		  [new Date(2017, 02, 25), 89],
+		  [new Date(2017, 02, 29), 70],
+		  [new Date(2017, 03, 01), 63],
+		  [new Date(2017, 03, 03), 60],
+		  [new Date(2017, 03, 06), 62],
+		  [new Date(2017, 03, 09), 50],
+		  [new Date(2017, 03, 13), 50],
+		  [new Date(2017, 03, 15), 55],
+		  [new Date(2017, 03, 19), 69],
+		  [new Date(2017, 03, 20), 62],
+		  [new Date(2017, 03, 24), 63],
+		  [new Date(2017, 03, 25), 59],
+		  [new Date(2017, 03, 28), 50],
+		  [new Date(2017, 04, 01), 63],
+		  [new Date(2017, 04, 03), 40],
+		  [new Date(2017, 04, 06), 52],
+		  [new Date(2017, 04, 09), 60],
+		  [new Date(2017, 04, 12), 60],
+		  [new Date(2017, 04, 14), 65],
+		  [new Date(2017, 04, 17), 79],
+		  [new Date(2017, 04, 20), 72],
+		  [new Date(2017, 04, 24), 63],
+		  [new Date(2017, 04, 25), 69],
+		  [new Date(2017, 04, 29), 50],
+		  [new Date(2017, 05, 02), 83],
+		  [new Date(2017, 05, 03), 60],
+		  [new Date(2017, 05, 06), 52],
+		  [new Date(2017, 05, 10), 50],
+		  [new Date(2017, 05, 12), 50],
+		  [new Date(2017, 05, 15), 45],
+		  [new Date(2017, 05, 19), 79],
+		  [new Date(2017, 05, 20), 76],
+		  [new Date(2017, 05, 24), 93],
+		  [new Date(2017, 05, 25), 90],
+		  [new Date(2017, 05, 29), 78],
+		  [new Date(2017, 06, 02), 43],
+		  [new Date(2017, 06, 03), 60],
+		  [new Date(2017, 06, 06), 52],
+		  [new Date(2017, 06, 10), 50],
+		  [new Date(2017, 06, 12), 70],
+		  [new Date(2017, 06, 15), 65],
+		  [new Date(2017, 06, 16), 99],
+		  [new Date(2017, 06, 20), 81],
+		  [new Date(2017, 06, 22), 93],
+		  [new Date(2017, 06, 25), 80],
+		  [new Date(2017, 06, 27), 98],
+	]);
+	
+	var options = {
+		  title: 'ABC媒体の応募数',
+		  hAxis: {
+			    title: '年月日',
+			    titleTextStyle: {
+			      color: '#333'
+			    },
+			    format: 'yyyy年MM月'
+		  },
+		  vAxis: {
+			    title : '人', 
+			    minValue: 0
+		  },
+		  explorer: {
+			    axis: 'horizontal', 	
+			    // 選定でズームできる
+			    actions: ['dragToZoom', 'rightClickToReset'] , 
+			    keepInBounds: true,
+			    maxZoomIn: 5.0,
+			    maxZoomOut: 1		// ズームの限度
+		  },
+		  colors: ['#D44E41'],
+		  legend : {
+			  	position : 'top',
+					alignment : 'center'    	
+		  },
+		  curveType : 'function',    // 曲線スタイル
+		  pointSize: 5
+		  	
+	};
+	
+	var chart = new google.visualization.LineChart(document.getElementById('chart_div9'));
+	chart.draw(data, options);
+}

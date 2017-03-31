@@ -35,7 +35,7 @@ div.inline {
 <div class="container body-container">
 	<div class="row">
 		<div class="col-md-12 text-center">
-			<h1>縦棒グラフのデモ</h1>
+			<h3>縦棒グラフのデモ</h3>
 		</div>
 		<div class="clearfix"></div>
 		<div class="col-md-12">
@@ -47,7 +47,7 @@ div.inline {
 
 	<div class="row">
 		<div class="col-md-12 text-center">
-			<h1>組合せのデモ</h1>
+			<h3>組合せのデモ</h3>
 		</div>
 		<div class="clearfix"></div>
 		<div class="col-md-12">
@@ -59,7 +59,7 @@ div.inline {
 
 	<div class="row">
 		<div class="col-md-12 text-center">
-			<h1>積み立てグラフのデモ</h1>
+			<h3>積み立てグラフのデモ</h3>
 		</div>
 		<div class="clearfix"></div>
 		<div class="col-md-12">
@@ -71,7 +71,7 @@ div.inline {
 	<!--  
 	<div class="row">
 		<div class="col-md-12 text-center">
-			<h1>マップのデモ</h1>
+			<h3>マップのデモ</h3>
 		</div>
 		<div id="map-container"></div>
 		<div id="chart_div4" class="chart"></div>
@@ -81,7 +81,7 @@ div.inline {
 	-->
 	<div class="row">
 		<div class="col-md-12 text-center">
-			<h1>マップのデモ</h1>
+			<h3>マップのデモ</h3>
 		</div>
 		<div class="clearfix"></div>
 		<div class="col-md-12">
@@ -93,7 +93,7 @@ div.inline {
 	
 	<div class="row">
 		<div class="col-md-12 text-center">
-			<h1>グラフの一部を「破線」等で表現できるか？</h1>
+			<h3>グラフの一部を「破線」等で表現できるか　＃１？</h3>
 		</div>
 		<div class="clearfix"></div>
 		<div class="col-md-12">
@@ -105,7 +105,7 @@ div.inline {
 	
 	<div class="row">
 		<div class="col-md-12 text-center">
-			<h1>コントロールとダッシュボードのデモ</h1>
+			<h3>グラフの一部を「破線」等で表現できるか　＃２？</h3>
 		</div>
 		<div class="clearfix"></div>
 		<div class="col-md-12">
@@ -117,7 +117,7 @@ div.inline {
 	
 	<div class="row">
 		<div class="col-md-12 text-center">
-			<h1>コントロールとダッシュボードのデモ</h1>
+			<h3>ズーム可能性のデモ</h3>
 		</div>
 		<div class="clearfix"></div>
 		<div class="col-md-12">
@@ -125,6 +125,43 @@ div.inline {
 		</div>
 	</div>
 	<div class="row"></div>
+	<hr />
+	
+	<div class="row">
+		<div class="col-md-12 text-center">
+			<h3>ズーム可能性のデモ　（カスタムスタイル）</h3>
+		</div>
+		<div class="clearfix"></div>
+		<div class="col-md-12">
+			<div id="chart_div9" class="chart"></div>
+		</div>
+	</div>
+	<div class="row"></div>
+	<hr />
+	
+	<div class="row">
+		<div class="col-md-12 text-center">
+			<h3>コントロールとダッシュボードのデモ</h3>
+		</div>
+		<div class="clearfix"></div>
+		<div class="col-md-12">
+			<div id="chart_div10" class="chart"></div>
+		</div>
+	</div>
+	<div class="row"></div>
+	
+	
+	<div class="row">
+		<div class="col-md-12 text-center">
+			<h3>コントロールとダッシュボードのデモ</h3>
+		</div>
+		<div class="clearfix"></div>
+		<div class="col-md-12">
+			<div id="chart_div11" class="chart"></div>
+		</div>
+	</div>
+	<div class="row"></div>
+	<hr />
 	<hr />
 </div>
 
