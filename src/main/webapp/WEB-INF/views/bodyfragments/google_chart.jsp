@@ -153,7 +153,7 @@ div.inline {
 	
 	<div class="row">
 		<div class="col-md-12">
-			<h3>ズーム可能性のデモ　＃３：　Annotation Chart (6000 point)</h3>
+			<h3>ズーム可能性のデモ　＃３：　Annotation Chart (2500 point)</h3>
 		</div>
 		<div class="clearfix"></div>
 		<div class="col-md-12">
