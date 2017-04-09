@@ -141,7 +141,7 @@ div.inline {
 	
 	<div class="row">
 		<div class="col-md-12">
-			<h3>ズーム可能性のデモ　＃３：　Annotation Chart</h3>
+			<h3>時間の単位の変更のデモ　＃1：　Annotation Chart</h3>
 		</div>
 		<div class="clearfix"></div>
 		<div class="col-md-12">
@@ -149,11 +149,11 @@ div.inline {
 		</div>
 	</div>
 	<div class="row"></div>
-	
+	<hr />
 	
 	<div class="row">
 		<div class="col-md-12">
-			<h3>ズーム可能性のデモ　＃３：　Annotation Chart (2500 point)</h3>
+			<h3>時間の単位の変更のデモ　＃2：　Annotation Chart (2500 point)</h3>
 		</div>
 		<div class="clearfix"></div>
 		<div class="col-md-12">
@@ -162,7 +162,7 @@ div.inline {
 	</div>
 	<div class="row"></div>
 	<hr />
-	<hr />
+	
 </div>
 
 <!-- Google api JavaScript -->
