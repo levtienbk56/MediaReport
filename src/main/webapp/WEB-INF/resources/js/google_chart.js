@@ -697,7 +697,7 @@ function drawChart11() {
 
 
 //=========================================================================
-//CHART12: 人口ピラミッドのデモ #2　棒グラフの組立
+//CHART12: 人口ピラミッドのデモ #1　棒グラフの組立
 //=========================================================================
 google.setOnLoadCallback(drawChart12);
 
@@ -767,3 +767,132 @@ function drawChart12()
 
   chart.draw(data, options);
 }
+
+//=========================================================================
+//CHART13&14: 人口ピラミッドのデモ #2　棒グラフの組立
+//=========================================================================
+google.setOnLoadCallback(drawChart13);
+google.setOnLoadCallback(drawChart14);
+
+//左側
+function drawChart13() {
+
+      var data = google.visualization.arrayToDataTable([
+                ['年齢', '女性',  '女性（平均）'],
+    		    ['0-4 ',    60,  88],
+    		    ['5-9 ',    70,  89],
+    		    ['10-14 ',  90,  67],
+    		    ['15-19 ',  113, 54],
+    		    ['20-24 ',  173, 33],
+    		    ['25-29 ',  139,  57],
+    		    ['30-34 ',  120, 56],
+    		    ['35-39 ',  111, 54],
+    		    ['40-44 ',  89,  43],
+    		    ['45-49 ',  60,  56],
+    		    ['50-54 ',  40,  45],
+    		    ['55-59 ',  23,  34],
+    		    ['60-64 ',  20,  34],
+    		    ['64-69 ',  16,  44],
+    		    ['70-74 ',  12,  44],
+    		    ['75-79 ',  7,   33],
+    		    ['80-84 ',  3,	  33],
+    		    ['85-89 ',  1,	  33],
+    		    ['90-94 ',  0, 	  33],
+    		    ['95+ ',    0, 	  23]
+      ]);
+
+      var options = {
+	        height :  600,
+	        width: 400,
+	        hAxis: {
+	          minValue: 0,
+	          direction : -1  // reverse
+	        },
+	        vAxis: {
+	          // title: 'City',
+	        	textPosition: 'none',
+	        	direction: -1  // reverse
+	        },
+	        series: {
+	        	1: {
+	          type: 'line'
+	          }
+	       },
+	        legend : {
+				position : 'bottom',
+				alignment : 'center'
+			},
+			chartArea:{
+				  left:80,
+				  right:0,
+				  //top:0,
+				  //width:'50%',
+				  //height:'75%'
+			  },
+			  colors : [ 'red', 'green' ],
+      };
+
+      var chart = new google.visualization.BarChart(document.getElementById('chart_div13'));
+
+      chart.draw(data, options);
+    }
+// 右側
+function drawChart14() {
+    var data = google.visualization.arrayToDataTable([
+        ['年齢', '男性','男性（全国）'],
+	    ['0-4 ',   70, 50],
+	    ['5-9 ',   80, 55],
+	    ['10-14 ', 85, 57],
+	    ['15-19 ', 105,60],
+	    ['20-24 ', 150,64],
+	    ['25-29 ', 123,70],
+	    ['30-34 ', 110,78],
+	    ['35-39 ', 101,80],
+	    ['40-44 ', 70, 85],
+	    ['45-49 ', 50, 87],
+	    ['50-54 ', 33, 100],
+	    ['55-59 ', 32, 115],
+	    ['60-64 ', 27, 114],
+	    ['64-69 ', 19, 110],
+	    ['70-74 ', 13, 100],
+	    ['75-79 ', 8,  90],
+	    ['80-84 ', 3,  60],
+	    ['85-89 ', 1,  30],
+	    ['90-94 ', 0,  20],
+	    ['95+ ',   0,  14]
+    ]);
+
+    var options = {
+	      height :  600,
+	      width: 400,
+	      hAxis: {
+	        minValue: 0,
+	      },
+	      vAxis: {
+	        //title: 'City',
+	    	  direction: -1  // reverse
+	      },
+	      series: {
+	      	1: {
+	        type: 'area'
+	        }
+	     },
+	      legend : {
+				position : 'bottom',
+				alignment : 'center'
+		  },
+		  chartArea:{
+			  left:40,
+			  right:0,
+			  //top:0,
+			  //width:'50%',
+			  //height:'75%'
+		  },
+		  colors : [ 'blue', 'orange' ],
+	
+    };
+
+    var chart = new google.visualization.BarChart(document.getElementById('chart_div14'));
+
+    chart.draw(data, options);
+  }

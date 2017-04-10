@@ -28,6 +28,7 @@ footer {
 div.inline {
 	float: left;
 }
+
 </style>
 
 
@@ -180,8 +181,11 @@ div.inline {
 			<h3>人口ピラミッドのデモ #2　棒グラフの組立</h3>
 		</div>
 		<div class="clearfix"></div>
-		<div class="col-md-12">
-			<div id="chart_div13" class="chart"></div>
+		<div class="inline">
+			<div id="chart_div13"></div>
+		</div>
+		<div class="inline">
+			<div id="chart_div14"></div>
 		</div>
 	</div>
 	<div class="row"></div>
