@@ -176,8 +176,8 @@ div.inline {
 	<div class="row"></div>
 	<hr />
 	
-	<div class="row">
-		<div class="col-md-12">
+	<div class="mrow">
+		<div>
 			<h3>人口ピラミッドのデモ #2　棒グラフの組立</h3>
 		</div>
 		<div class="clearfix"></div>
