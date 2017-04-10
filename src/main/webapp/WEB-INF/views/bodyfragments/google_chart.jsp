@@ -191,6 +191,17 @@ div.inline {
 	<div class="row"></div>
 	<hr />
 	
+	<div class="row">
+		<div class="col-md-12">
+			<h3>アクションの設定（クリック時にメニュー表示して）</h3>
+		</div>
+		<div class="clearfix"></div>
+		<div class="col-md-12">
+			<div id="chart_div15" class="chart"></div>
+		</div>
+	</div>
+	<div class="row"></div>
+	<hr />
 </div>
 
 <!-- Google api JavaScript -->

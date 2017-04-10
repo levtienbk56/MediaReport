@@ -777,28 +777,29 @@ google.setOnLoadCallback(drawChart14);
 //左側
 function drawChart13() {
 
-      var data = google.visualization.arrayToDataTable([
-                ['年齢', '女性',  '女性（平均）'],
-    		    ['0-4 ',    60,  88],
-    		    ['5-9 ',    70,  89],
-    		    ['10-14 ',  90,  67],
-    		    ['15-19 ',  113, 54],
-    		    ['20-24 ',  173, 33],
-    		    ['25-29 ',  139,  57],
-    		    ['30-34 ',  120, 56],
-    		    ['35-39 ',  111, 54],
-    		    ['40-44 ',  89,  43],
-    		    ['45-49 ',  60,  56],
-    		    ['50-54 ',  40,  45],
-    		    ['55-59 ',  23,  34],
-    		    ['60-64 ',  20,  34],
-    		    ['64-69 ',  16,  44],
-    		    ['70-74 ',  12,  44],
-    		    ['75-79 ',  7,   33],
-    		    ['80-84 ',  3,	  33],
-    		    ['85-89 ',  1,	  33],
-    		    ['90-94 ',  0, 	  33],
-    		    ['95+ ',    0, 	  23]
+      var data = google.visualization.
+      arrayToDataTable([
+        ['年齢', '女性',  '女性（平均）'],
+	    ['0-4 ',    60,  88],
+	    ['5-9 ',    70,  89],
+	    ['10-14 ',  90,  67],
+	    ['15-19 ',  113, 54],
+	    ['20-24 ',  173, 33],
+	    ['25-29 ',  139,  57],
+	    ['30-34 ',  120, 56],
+	    ['35-39 ',  111, 54],
+	    ['40-44 ',  89,  43],
+	    ['45-49 ',  60,  56],
+	    ['50-54 ',  40,  45],
+	    ['55-59 ',  23,  34],
+	    ['60-64 ',  20,  34],
+	    ['64-69 ',  16,  44],
+	    ['70-74 ',  12,  44],
+	    ['75-79 ',  7,   33],
+	    ['80-84 ',  3,	  33],
+	    ['85-89 ',  1,	  33],
+	    ['90-94 ',  0, 	  33],
+	    ['95+ ',    0, 	  23]
       ]);
 
       var options = {
@@ -838,7 +839,9 @@ function drawChart13() {
     }
 // 右側
 function drawChart14() {
-    var data = google.visualization.arrayToDataTable([
+	
+    var data = google.visualization
+    .arrayToDataTable([
         ['年齢', '男性','男性（全国）'],
 	    ['0-4 ',   70, 50],
 	    ['5-9 ',   80, 55],
@@ -895,4 +898,55 @@ function drawChart14() {
     var chart = new google.visualization.BarChart(document.getElementById('chart_div14'));
 
     chart.draw(data, options);
-  }
+}
+
+
+//=========================================================================
+//CHART15: アクションの設定ができるか？　（クリック時にメニュー表示して）
+//=========================================================================
+google.setOnLoadCallback(drawChart15);
+
+function drawChart15() {
+	  var data = google.visualization.arrayToDataTable([
+	    ['Genre', 'Percentage of my books'],
+	    ['Science Fiction', 217],
+	    ['General Science', 203],
+	    ['Computer Science', 175],
+	    ['History', 155],
+	    ['Economics & Political Science', 98],
+	    ['General Fiction', 72],
+	    ['Fantasy', 51],
+	    ['Law', 29]
+	  ]);
+	
+	  var chart = new google.visualization.PieChart(
+	    document.getElementById('chart_div15'));
+	
+	  var options = { 
+	  	height: 500,
+	    width:700,
+	  	tooltip: { trigger: 'selection' }
+	    };
+	
+	  chart.setAction({
+	    id: 'increase',
+	    text: 'Read 20 more books',
+	    action: function() {
+	      data.setCell(chart.getSelection()[0].row, 1,
+	                   data.getValue(chart.getSelection()[0].row, 1) + 20);
+	      chart.draw(data, options);
+	    }
+	  });
+	
+	  chart.setAction({
+	    id: 'decrease',
+	    text: 'Read 20 fewer books',
+	    action: function() {
+	      data.setCell(chart.getSelection()[0].row, 1,
+	                   data.getValue(chart.getSelection()[0].row, 1) - 20);
+	      chart.draw(data, options);
+	    }
+	  });
+	
+	  chart.draw(data, options);
+}
