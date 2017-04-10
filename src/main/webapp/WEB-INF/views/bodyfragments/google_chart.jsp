@@ -163,6 +163,30 @@ div.inline {
 	<div class="row"></div>
 	<hr />
 	
+	<div class="row">
+		<div class="col-md-12">
+			<h3>人口ピラミッドのデモ #1　マイナス棒グラフ</h3>
+		</div>
+		<div class="clearfix"></div>
+		<div class="col-md-12">
+			<div id="chart_div12" class="chart"></div>
+		</div>
+	</div>
+	<div class="row"></div>
+	<hr />
+	
+	<div class="row">
+		<div class="col-md-12">
+			<h3>人口ピラミッドのデモ #2　棒グラフの組立</h3>
+		</div>
+		<div class="clearfix"></div>
+		<div class="col-md-12">
+			<div id="chart_div13" class="chart"></div>
+		</div>
+	</div>
+	<div class="row"></div>
+	<hr />
+	
 </div>
 
 <!-- Google api JavaScript -->

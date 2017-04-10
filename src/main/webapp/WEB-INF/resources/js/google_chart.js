@@ -694,3 +694,76 @@ function drawChart11() {
 	var chart = new google.visualization.AnnotationChart(document.getElementById('chart_div11'));
 	chart.draw(data, options);
 }
+
+
+//=========================================================================
+//CHART12: 人口ピラミッドのデモ #2　棒グラフの組立
+//=========================================================================
+google.setOnLoadCallback(drawChart12);
+
+function drawChart12()
+{
+  //var data = new google.visualization.DataTable();
+
+  var dataArray = [
+    ['Age', '男性', '女性', '男性（全国）', '女性（平均）'],
+    ['0-4 ',   70,  -60, 50, -88],
+    ['5-9 ',   80,  -70, 55, -89],
+    ['10-14 ', 85,  -90, 57, -67],
+    ['15-19 ', 105, -113,60, -54],
+    ['20-24 ', 150, -173,64, -33],
+    ['25-29 ', 123, -139,70, -57],
+    ['30-34 ', 110, -120,78, -56],
+    ['35-39 ', 101, -111,80, -54],
+    ['40-44 ', 70,  -89, 85, -43],
+    ['45-49 ', 50,  -60, 87, -56],
+    ['50-54 ', 33,  -40, 100,-45],
+    ['55-59 ', 32,  -23, 115,-34],
+    ['60-64 ', 27,  -20, 114,-34],
+    ['64-69 ', 19,  -16, 110,-44],
+    ['70-74 ', 13,  -12, 100,-44],
+    ['75-79 ', 8,   -7,	 90, -33],
+    ['80-84 ', 3,   -3,	 60, -33],
+    ['85-89 ', 1,   -1,	 30, -33],
+    ['90-94 ', 0,   0, 	 20, -33],
+    ['95+ ',   0,   0, 	 14, -23]
+  ];
+
+  var data = google.visualization.arrayToDataTable(dataArray);
+
+  var chart = new google.visualization.BarChart(document.getElementById('chart_div12'));
+
+  var options = {
+    isStacked: true,
+    height :  600,
+    hAxis: {
+      format: ';',
+      viewWindowMode: 'pretty'
+    },
+    vAxis: {
+    	title : '年齢',
+      direction: -1  // reverse
+    },
+    series: {
+    	2: {
+      type: 'area'
+      },
+      3: {
+      type: 'line'
+      }
+   },
+   legend : {
+			position : 'bottom',
+			alignment : 'center'
+		},
+  };
+
+
+  var formatter = new google.visualization.NumberFormat({
+    pattern: ';'
+  });
+
+  formatter.format(data, 2)
+
+  chart.draw(data, options);
+}
