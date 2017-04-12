@@ -908,64 +908,15 @@ google.setOnLoadCallback(drawChart15);
 
 function drawChart15() {
 	  var data = google.visualization.arrayToDataTable([
-	    ['媒体', '応募者数'],
-	    ['Weban', 217],
-	    ['おうぼうける君', 103],
-	    ['バイトル', 75],
-	    ['マイナビバイト', 155],
-	    ['ジョブセンス', 98],
-	    ['リクナビNEXT', 72],
-	    ['linebaito', 151],
-	    ['シフトワークス', 29]
-	  ]);
-	
-	  var chart = new google.visualization.ColumnChart(
-	    document.getElementById('chart_div15'));
-	
-	  var options = { 
-    	  	height: 500,
-    	    width:700,
-    	  	tooltip: { trigger: 'selection' },
-    	  	legend: { position: 'none' },
-	    };
-	
-	  chart.setAction({
-	    id: 'changetype',
-	    text: '円グラフに遷移する',
-	    action: function() {
-	    	drawChart16();
-//	      data.setCell(chart.getSelection()[0].row, 1,
-//	                   data.getValue(chart.getSelection()[0].row, 1) + 20);
-//	      chart.draw(data, options);
-	    }
-	  });
-	
-	  chart.setAction({
-	    id: 'dosomething',
-	    text: '他のアクション',
-	    action: function() {
-	    	alert("アクションを確認する！");
-//	      data.setCell(chart.getSelection()[0].row, 1,
-//	                   data.getValue(chart.getSelection()[0].row, 1) - 20);
-//	      chart.draw(data, options);
-	    }
-	  });
-	
-	  chart.draw(data, options);
-}
-
-
-function drawChart16() {
-	  var data = google.visualization.arrayToDataTable([
-	    ['都道府県', '応募者数'],
-	    ['北海道', 117],
-	    ['東京', 403],
-	    ['大阪', 175],
-	    ['千葉', 155],
-	    ['神奈川', 98],
-	    ['埼玉', 72],
-	    ['新潟', 151],
-	    ['長野', 29]
+	    ['Genre', 'Percentage of my books'],
+	    ['Science Fiction', 217],
+	    ['General Science', 203],
+	    ['Computer Science', 175],
+	    ['History', 155],
+	    ['Economics & Political Science', 98],
+	    ['General Fiction', 72],
+	    ['Fantasy', 51],
+	    ['Law', 29]
 	  ]);
 	
 	  var chart = new google.visualization.PieChart(
@@ -974,14 +925,28 @@ function drawChart16() {
 	  var options = { 
 	  	height: 500,
 	    width:700,
-	    tooltip: { trigger: 'selection' },
+	  	tooltip: { trigger: 'selection' }
 	    };
+	
 	  chart.setAction({
-		    id: 'back',
-		    text: '戻る',
-		    action: function() {
-		    	drawChart15();
-		    }
+	    id: 'increase',
+	    text: 'Read 20 more books',
+	    action: function() {
+	      data.setCell(chart.getSelection()[0].row, 1,
+	                   data.getValue(chart.getSelection()[0].row, 1) + 20);
+	      chart.draw(data, options);
+	    }
 	  });
+	
+	  chart.setAction({
+	    id: 'decrease',
+	    text: 'Read 20 fewer books',
+	    action: function() {
+	      data.setCell(chart.getSelection()[0].row, 1,
+	                   data.getValue(chart.getSelection()[0].row, 1) - 20);
+	      chart.draw(data, options);
+	    }
+	  });
+	
 	  chart.draw(data, options);
 }

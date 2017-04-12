@@ -34,35 +34,10 @@ div.inline {
 
 <div class="container body-container">
 	<div class="row">
-		<div class="col-md-12 text-center">
-			<h3>応募～採用状態</h3>
-		</div>
-		<div class="clearfix"></div>
 		<div class="col-md-12">
 			<div id="chart_div1" class="chart"></div>
 		</div>
 	</div>
-
-	<hr />
-	<div class="row">
-		<div class="col-md-12 text-center">
-			<h1></h1>
-		</div>
-		<div class="clearfix"></div>
-		<div class="col-md-12">
-			<div id="chart_div2" class="chart"></div>
-		</div>
-	</div>
-	<div class="row">
-		<div class="col-md-12 text-center">
-			<h1></h1>
-		</div>
-		<div class="clearfix"></div>
-		<div class="col-md-12">
-			<div id="chart_div3" class="chart"></div>
-		</div>
-	</div>
-
 </div>
 
 <!-- Google api JavaScript -->
