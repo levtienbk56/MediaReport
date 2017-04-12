@@ -1,10 +1,8 @@
-
 function getChartHeight() {
 	var ww = $(window).width();
 	var wh = $(window).height();
 	var dw = $(document).width();
 	var dh = $(document).height();
-	console.log(ww + "-" + wh + ",  " + dw + "-" + dh);
 
 	if (ww > 1600)
 		return 800;
