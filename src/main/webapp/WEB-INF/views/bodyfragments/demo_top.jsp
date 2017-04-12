@@ -22,7 +22,7 @@ footer {
 
 .chart {
 	width: 100%;
-	min-height: 450px;
+	min-height: 800px;
 }
 
 div.inline {
@@ -35,7 +35,7 @@ div.inline {
 <div class="container body-container">
 	<div class="row">
 		<div class="col-md-12 text-center">
-			<h1>縦棒グラフ</h1>
+			<h3>応募～採用状態</h3>
 		</div>
 		<div class="clearfix"></div>
 		<div class="col-md-12">
@@ -46,27 +46,29 @@ div.inline {
 	<hr />
 	<div class="row">
 		<div class="col-md-12 text-center">
-			<h1>面グラフ</h1>
+			<h1></h1>
 		</div>
 		<div class="clearfix"></div>
 		<div class="col-md-12">
 			<div id="chart_div2" class="chart"></div>
 		</div>
 	</div>
-
-	<hr />
 	<div class="row">
 		<div class="col-md-12 text-center">
-			<h1>インタラクティブグラフ</h1>
+			<h1></h1>
 		</div>
-		<div id="map-container"></div>
-		<div id="chart_div3" class="chart"></div>
+		<div class="clearfix"></div>
+		<div class="col-md-12">
+			<div id="chart_div3" class="chart"></div>
+		</div>
 	</div>
 
-	<div class="row"></div>
 </div>
+
+<!-- Google api JavaScript -->
+<script src="https://www.google.com/jsapi"></script>
 
 <script
 	src="${pageContext.servletContext.contextPath}/resources/vendor/d3js/d3.min.js"></script>
 <script
-	src="${pageContext.servletContext.contextPath}/resources/js/d3js.js"></script>
+	src="${pageContext.servletContext.contextPath}/resources/js/demo_top.js"></script>
