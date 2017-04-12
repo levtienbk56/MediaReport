@@ -19,7 +19,7 @@ public class HomeController {
 
 	@RequestMapping(value = { "", "home", "index" }, method = RequestMethod.GET)
 	public String home() {
-		return "homePage";
+		return "demoTopPage";
 	}
 
 	@RequestMapping(value = "google-chart", method = RequestMethod.GET)

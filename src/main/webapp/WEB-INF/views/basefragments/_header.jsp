@@ -13,7 +13,7 @@
 					class="fa fa-bars"></i>
 			</button>
 			<a class="navbar-brand page-scroll"
-				href="${pageContext.servletContext.contextPath}">大変な研修</a>
+				href="${pageContext.servletContext.contextPath}">グラフ描画の検討</a>
 		</div>
 
 		<!-- Collect the nav links, forms, and other content for toggling -->
@@ -25,7 +25,7 @@
 				<li><a
 					href="${pageContext.servletContext.contextPath}/google-chart">Google
 						Chart</a></li>
-				<li><a href="${pageContext.servletContext.contextPath}/d3js">D3js</a></li>
+				<!-- <li><a href="${pageContext.servletContext.contextPath}/d3js">D3js</a></li> -->
 
 			</ul>
 		</div>
