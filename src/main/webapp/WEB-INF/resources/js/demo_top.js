@@ -14,14 +14,11 @@ google.load("visualization", "1", {
 	language : 'ja'
 });
 
-// var default_colors = [ '#3366CC', '#DC3912', '#FF9900', '#109618', '#990099',
-// '#3B3EAC', '#0099C6', '#DD4477', '#66AA00', '#B82E2E', '#316395',
-// '#22AA99', '#AAAA11', '#6633CC', '#E67300', '#8B0707',
-// '#329262', '#5574A6', '#3B3EAC' ];
-
 var default_colors = [ '#f44336', '#e91e63', '#9c27b0', '#673ab7', '#3f51b5',
 		'#2196f3', '#03a9f4', '#00bcd4', '#009688', '#4caf50', '#8bc34a',
 		'#ffc107', '#ff9800', '#ff5722', '#795548' ];
+
+var default_colors2 = ['#00BCD4', '#FFF59D', '#FDD835', '#BCAAA4', '#795548', '#AEEA00', '#FFAB00', '#E91E63', '#880E4F', '#E1BEE7', '#BA68C8', '#9C27B0', '#6A1B9A', '#00838F', '#80CBC4', '#009688', '#00695C', '#A5D6A7', '#4CAF50'];
 
 // === responsive graph ===
 $(window).resize(function() {
@@ -29,11 +26,13 @@ $(window).resize(function() {
 	drawChart2();
 	drawChart3();
 	drawChart4();
+	drawChart5();
 });
 google.setOnLoadCallback(drawChart1);
 google.setOnLoadCallback(drawChart2);
 google.setOnLoadCallback(drawChart3);
 google.setOnLoadCallback(drawChart4);
+google.setOnLoadCallback(drawChart5);
 
 // ========================== JSON DATA DEMO ================================
 // {
@@ -59,440 +58,39 @@ google.setOnLoadCallback(drawChart4);
 //
 // same CSV file
 var jsonData = {
-	"cols" : [ {
-		"label" : "月ごと",
-		"type" : "string"
-	}, {
-		"label" : "応募トレンド",
-		"type" : "number"
-	}, {
-		"label" : "採用予定",
-		"type" : "number"
-	}, {
-		"label" : "採用数",
-		"type" : "number"
-	}, {
-		"label" : "DOMO!NET",
-		"type" : "number"
-	}, {
-		"label" : "バイトル",
-		"type" : "number"
-	}, {
-		"label" : "マイナビバイト",
-		"type" : "number"
-	}, {
-		"label" : "フロム・エーキャリア",
-		"type" : "number"
-	}, {
-		"label" : "Workin",
-		"type" : "number"
-	}, {
-		"label" : "ジョブセンス",
-		"type" : "number"
-	}, {
-		"label" : "Weban",
-		"type" : "number"
-	}, {
-		"label" : "Girls&Co.",
-		"type" : "number"
-	}, {
-		"label" : "おうぼうける君",
-		"type" : "number"
-	}, {
-		"label" : "イーアイデム",
-		"type" : "number"
-	}, {
-		"label" : "応募-採用HP",
-		"type" : "number"
-	} ],
-	"rows" : [ {
-		"c" : [ {
-			"v" : "2016年06月"
-		}, {
-			"v" : 1000
-		}, {
-			"v" : 50
-		}, {
-			"v" : 40
-		}, {
-			"v" : 0
-		}, {
-			"v" : 77
-		}, {
-			"v" : 0
-		}, {
-			"v" : 0
-		}, {
-			"v" : 0
-		}, {
-			"v" : 0
-		}, {
-			"v" : 0
-		}, {
-			"v" : 1
-		}, {
-			"v" : 0
-		}, {
-			"v" : 0
-		}, {
-			"v" : null
-		} ]
-	}, {
-		"c" : [ {
-			"v" : "2016年07月"
-		}, {
-			"v" : 1800
-		}, {
-			"v" : 200
-		}, {
-			"v" : 150
-		}, {
-			"v" : 0
-		}, {
-			"v" : 223
-		}, {
-			"v" : 34
-		}, {
-			"v" : 0
-		}, {
-			"v" : 0
-		}, {
-			"v" : 20
-		}, {
-			"v" : 11
-		}, {
-			"v" : 4
-		}, {
-			"v" : 0
-		}, {
-			"v" : 3
-		}, {
-			"v" : null
-		} ]
-	}, {
-		"c" : [ {
-			"v" : "2016年08月"
-		}, {
-			"v" : 2000
-		}, {
-			"v" : 1000
-		}, {
-			"v" : 800
-		}, {
-			"v" : 0
-		}, {
-			"v" : 253
-		}, {
-			"v" : 276
-		}, {
-			"v" : 0
-		}, {
-			"v" : 1
-		}, {
-			"v" : 112
-		}, {
-			"v" : 71
-		}, {
-			"v" : 0
-		}, {
-			"v" : 363
-		}, {
-			"v" : 33
-		}, {
-			"v" : null
-		} ]
-	}, {
-		"c" : [ {
-			"v" : "2016年09月"
-		}, {
-			"v" : 2400
-		}, {
-			"v" : 2000
-		}, {
-			"v" : 1700
-		}, {
-			"v" : 0
-		}, {
-			"v" : 466
-		}, {
-			"v" : 510
-		}, {
-			"v" : 0
-		}, {
-			"v" : 1
-		}, {
-			"v" : 99
-		}, {
-			"v" : 70
-		}, {
-			"v" : 0
-		}, {
-			"v" : 1421
-		}, {
-			"v" : 43
-		}, {
-			"v" : null
-		} ]
-	}, {
-		"c" : [ {
-			"v" : "2016年10月"
-		}, {
-			"v" : 3000
-		}, {
-			"v" : 1500
-		}, {
-			"v" : 1400
-		}, {
-			"v" : 1
-		}, {
-			"v" : 687
-		}, {
-			"v" : 620
-		}, {
-			"v" : 0
-		}, {
-			"v" : 1
-		}, {
-			"v" : 142
-		}, {
-			"v" : 151
-		}, {
-			"v" : 0
-		}, {
-			"v" : 1851
-		}, {
-			"v" : 63
-		}, {
-			"v" : null
-		} ]
-	}, {
-		"c" : [ {
-			"v" : "2016年11月"
-		}, {
-			"v" : 2000
-		}, {
-			"v" : 600
-		}, {
-			"v" : 550
-		}, {
-			"v" : 0
-		}, {
-			"v" : 464
-		}, {
-			"v" : 349
-		}, {
-			"v" : 0
-		}, {
-			"v" : 0
-		}, {
-			"v" : 87
-		}, {
-			"v" : 41
-		}, {
-			"v" : 0
-		}, {
-			"v" : 732
-		}, {
-			"v" : 29
-		}, {
-			"v" : null
-		} ]
-	}, {
-		"c" : [ {
-			"v" : "2016年12月"
-		}, {
-			"v" : 1500
-		}, {
-			"v" : 500
-		}, {
-			"v" : 350
-		}, {
-			"v" : 0
-		}, {
-			"v" : 156
-		}, {
-			"v" : 169
-		}, {
-			"v" : 0
-		}, {
-			"v" : 2
-		}, {
-			"v" : 50
-		}, {
-			"v" : 37
-		}, {
-			"v" : 0
-		}, {
-			"v" : 437
-		}, {
-			"v" : 21
-		}, {
-			"v" : null
-		} ]
-	}, {
-		"c" : [ {
-			"v" : "2017年01月"
-		}, {
-			"v" : 1600
-		}, {
-			"v" : 700
-		}, {
-			"v" : 600
-		}, {
-			"v" : 1
-		}, {
-			"v" : 222
-		}, {
-			"v" : 234
-		}, {
-			"v" : 0
-		}, {
-			"v" : 0
-		}, {
-			"v" : 61
-		}, {
-			"v" : 80
-		}, {
-			"v" : 0
-		}, {
-			"v" : 473
-		}, {
-			"v" : 19
-		}, {
-			"v" : null
-		} ]
-	}, {
-		"c" : [ {
-			"v" : "2017年02月"
-		}, {
-			"v" : 1600
-		}, {
-			"v" : 1000
-		}, {
-			"v" : 890
-		}, {
-			"v" : 0
-		}, {
-			"v" : 387
-		}, {
-			"v" : 446
-		}, {
-			"v" : 26
-		}, {
-			"v" : 2
-		}, {
-			"v" : 59
-		}, {
-			"v" : 95
-		}, {
-			"v" : 0
-		}, {
-			"v" : 442
-		}, {
-			"v" : 30
-		}, {
-			"v" : null
-		} ]
-	}, {
-		"c" : [ {
-			"v" : "2017年03月"
-		}, {
-			"v" : 1900
-		}, {
-			"v" : 1200
-		}, {
-			"v" : 1100
-		}, {
-			"v" : 0
-		}, {
-			"v" : 420
-		}, {
-			"v" : 480
-		}, {
-			"v" : 65
-		}, {
-			"v" : 0
-		}, {
-			"v" : 52
-		}, {
-			"v" : 84
-		}, {
-			"v" : 0
-		}, {
-			"v" : 894
-		}, {
-			"v" : 45
-		}, {
-			"v" : null
-		} ]
-	}, {
-		"c" : [ {
-			"v" : "2017年04月"
-		}, {
-			"v" : 2000
-		}, {
-			"v" : 1100
-		}, {
-			"v" : 980
-		}, {
-			"v" : 2
-		}, {
-			"v" : 310
-		}, {
-			"v" : 387
-		}, {
-			"v" : 26
-		}, {
-			"v" : 0
-		}, {
-			"v" : 77
-		}, {
-			"v" : 58
-		}, {
-			"v" : 0
-		}, {
-			"v" : 878
-		}, {
-			"v" : 48
-		}, {
-			"v" : null
-		} ]
-	}, {
-		"c" : [ {
-			"v" : "2017年05月"
-		}, {
-			"v" : 1800
-		}, {
-			"v" : 1300
-		}, {
-			"v" : null
-		}, {
-			"v" : 0
-		}, {
-			"v" : 0
-		}, {
-			"v" : 0
-		}, {
-			"v" : 0
-		}, {
-			"v" : 0
-		}, {
-			"v" : 0
-		}, {
-			"v" : 0
-		}, {
-			"v" : 0
-		}, {
-			"v" : 0
-		}, {
-			"v" : 0
-		}, {
-			"v" : null
-		} ]
-	},
+        "cols": [
+               {"label":"月ごと","type":"string"},
+               {"label":"応募トレンド","type":"number"},
+               {"label":"採用予定","type":"number"},
+               {"label":"採用数","type":"number"},
+               {"label":"DOMO!NET","type":"number"},
+               {"label":"バイトル","type":"number"},
+               {"label":"マイナビバイト","type":"number"},
+               {"label":"フロム・エーキャリア","type":"number"},
+				 {"label":"Workin","type":"number"},
+				 {"label":"ジョブセンス","type":"number"},
+				 {"label":"Weban","type":"number"},
+				 {"label":"Girls&Co.","type":"number"},
+				 {"label":"おうぼうける君","type":"number"},
+				 {"label":"イーアイデム","type":"number"},
+               {"label":"応募-採用HP","type":"number"}
+             ],
+        "rows": [
+				{"c":[{"v":"2016年06月"},{"v":1000},{"v":50},{"v":40},{"v":0},{"v":77},{"v":0},{"v":0},{"v":0},{"v":0},{"v":0},{"v":1},{"v":0},{"v":0},{"v":null}]},
+				{"c":[{"v":"2016年07月"},{"v":1800},{"v":200},{"v":150},{"v":0},{"v":223},{"v":34},{"v":0},{"v":0},{"v":20},{"v":11},{"v":4},{"v":0},{"v":3},{"v":null}]},
+				{"c":[{"v":"2016年08月"},{"v":2000},{"v":1000},{"v":800},{"v":0},{"v":253},{"v":276},{"v":0},{"v":1},{"v":112},{"v":71},{"v":0},{"v":363},{"v":33},{"v":null}]},
+				{"c":[{"v":"2016年09月"},{"v":2400},{"v":2000},{"v":1700},{"v":0},{"v":466},{"v":510},{"v":0},{"v":1},{"v":99},{"v":70},{"v":0},{"v":1421},{"v":43},{"v":null}]},
+				{"c":[{"v":"2016年10月"},{"v":3000},{"v":1500},{"v":1400},{"v":1},{"v":687},{"v":620},{"v":0},{"v":1},{"v":142},{"v":151},{"v":0},{"v":1851},{"v":63},{"v":null}]},
+				{"c":[{"v":"2016年11月"},{"v":2000},{"v":600},{"v":550},{"v":0},{"v":464},{"v":349},{"v":0},{"v":0},{"v":87},{"v":41},{"v":0},{"v":732},{"v":29},{"v":null}]},
+				{"c":[{"v":"2016年12月"},{"v":1500},{"v":500},{"v":350},{"v":0},{"v":156},{"v":169},{"v":0},{"v":2},{"v":50},{"v":37},{"v":0},{"v":437},{"v":21},{"v":null}]},
+				{"c":[{"v":"2017年01月"},{"v":1600},{"v":700},{"v":600},{"v":1},{"v":222},{"v":234},{"v":0},{"v":0},{"v":61},{"v":80},{"v":0},{"v":473},{"v":19},{"v":null}]},
+				{"c":[{"v":"2017年02月"},{"v":1600},{"v":1000},{"v":890},{"v":0},{"v":387},{"v":446},{"v":26},{"v":2},{"v":59},{"v":95},{"v":0},{"v":442},{"v":30},{"v":null}]},
+				{"c":[{"v":"2017年03月"},{"v":1900},{"v":1200},{"v":1000},{"v":0},{"v":420},{"v":480},{"v":65},{"v":0},{"v":52},{"v":84},{"v":0},{"v":894},{"v":45},{"v":null}]},
+				{"c":[{"v":"2017年04月"},{"v":2000},{"v":1100},{"v":950},{"v":2},{"v":310},{"v":387},{"v":26},{"v":0},{"v":77},{"v":58},{"v":0},{"v":878},{"v":48},{"v":null}]},
+				{"c":[{"v":"2017年05月"},{"v":1800},{"v":1300},{"v":null},{"v":0},{"v":0},{"v":0},{"v":0},{"v":0},{"v":0},{"v":0},{"v":0},{"v":0},{"v":0},{"v":null}]},
 
-	]
-};
+             ]
+       };
 
 //
 // =========================================================================
@@ -522,9 +120,9 @@ function drawChart1() {
 			.getElementById('chart_div1'));
 	chart.draw(data, options);
 }
-//=========================================================================
-//CHART2: COMBO CHART
-//=========================================================================
+// =========================================================================
+// CHART2: COMBO CHART
+// =========================================================================
 function drawChart2() {
 	var data = new google.visualization.DataTable(jsonData);
 
@@ -553,17 +151,17 @@ function drawChart2() {
 			0 : {
 				// 面グラフなら、カラーと面の上部の線を変更できる
 				type : 'area',
-//				color : '#ccff33',
-				lineWidth : 0, 	// 「0」になるなら、面の上部の線を表示しない。
+				// color : '#ccff33',
+				lineWidth : 0, // 「0」になるなら、面の上部の線を表示しない。
 				pointSize : 0,
 			},
 			1 : {
 				// 折り線グラフなら、カラーや線の広さやポイントのサイズや破線やポイント形やラベルを変更できる。
 				type : 'line',
-				lineWidth : 2,			//　線の広さ
-				pointSize : 5,			//　ポイントのサイズ
-				pointShape : 'circle', 	// 各スタイルは｛〇、□、☆、◇、△｝
-				lineDashStyle : [1,0],	// 破線スタイル。例：[5,3]
+				lineWidth : 2, // 線の広さ
+				pointSize : 5, // ポイントのサイズ
+				pointShape : 'circle', // 各スタイルは｛〇、□、☆、◇、△｝
+				lineDashStyle : [ 1, 0 ], // 破線スタイル。例：[5,3]
 				curveType : 'none', // "function"に設定すると曲線スタイルになる
 			},
 			2 : {
@@ -571,7 +169,7 @@ function drawChart2() {
 				lineWidth : 2,
 				pointSize : 5,
 				pointShape : 'circle',
-				lineDashStyle : [1,0],
+				lineDashStyle : [ 1, 0 ],
 				curveType : 'none',
 			}
 		},
@@ -603,7 +201,7 @@ function drawChart2() {
 		 */
 		curveType : 'function',
 		pointSize : 3,
-		pointShape : "circle" 
+		pointShape : "circle"
 	};
 
 	var chart = new google.visualization.ComboChart(document
@@ -611,10 +209,9 @@ function drawChart2() {
 	chart.draw(data, options);
 }
 
-
-//=========================================================================
-//CHART3: COMBO CHART
-//=========================================================================
+// =========================================================================
+// CHART3: COMBO CHART
+// =========================================================================
 function drawChart3() {
 	var data = new google.visualization.DataTable(jsonData);
 
@@ -629,7 +226,8 @@ function drawChart3() {
 		},
 		chartArea : {
 			left : '15%',
-			top : '10%'
+			top : '10%',
+			bottom : '15%'
 		},
 
 		/*
@@ -643,14 +241,14 @@ function drawChart3() {
 				// 面グラフなら、カラーと面の上部の線を変更できる
 				type : 'area',
 				color : '#ccff33',
-				lineWidth : 0, 	// 「0」になるなら、面の上部の線を表示しない。
+				lineWidth : 0, // 「0」になるなら、面の上部の線を表示しない。
 				pointSize : 0,
 			},
 			1 : {
 				// 折り線グラフなら、カラーや線の広さやポイントのサイズや破線やポイント形やラベルを変更できる。
 				type : 'line',
-				lineWidth : 2,			//　線の広さ
-				pointSize : 5,			//　ポイントのサイズ
+				lineWidth : 2, // 線の広さ
+				pointSize : 5, // ポイントのサイズ
 				curveType : 'function', // 曲線スタイル
 			},
 			2 : {
@@ -662,7 +260,7 @@ function drawChart3() {
 		},
 		isStacked : true, // 積み立て
 		bar : {
-			groupWidth : '40%' // 棒の広さ
+			groupWidth : '50%' // 棒の広さ
 		},
 		hAxis : {
 			// title : '月ごと',
@@ -688,7 +286,7 @@ function drawChart3() {
 		 */
 		curveType : 'function',
 		pointSize : 3,
-		pointShape : "circle" 
+		pointShape : "circle"
 	};
 
 	var chart = new google.visualization.ComboChart(document
@@ -696,10 +294,9 @@ function drawChart3() {
 	chart.draw(data, options);
 }
 
-
-//=========================================================================
-//CHART4: COMBO CHART
-//=========================================================================
+// =========================================================================
+// CHART4: COMBO CHART
+// =========================================================================
 function drawChart4() {
 	var data = new google.visualization.DataTable(jsonData);
 
@@ -714,7 +311,13 @@ function drawChart4() {
 		},
 		chartArea : {
 			left : '15%',
-			top : '10%'
+			top : '10%',
+			bottom : '15%',
+			 backgroundColor: {
+	              fill: '#EEEEEE',
+	              stroke:'blue',
+	            	strokeWidth:1
+            },
 		},
 
 		/*
@@ -727,18 +330,18 @@ function drawChart4() {
 			0 : {
 				// 面グラフなら、カラーと面の上部の線を変更できる
 				type : 'area',
-				color : '#ccff33',
-				lineWidth : 0, 	// 「0」になるなら、面の上部の線を表示しない。
+				color : '#3385ff',
+				lineWidth : 0, // 「0」になるなら、面の上部の線を表示しない。
 				pointSize : 0,
 				curveType : 'function',
 			},
 			1 : {
 				// 折り線グラフなら、カラーや線の広さやポイントのサイズや破線やポイント形やラベルを変更できる。
 				type : 'line',
-				lineWidth : 2,			//　線の広さ
-				pointSize : 7,			//　ポイントのサイズ
-				pointShape : 'triangle', 	// 各スタイルは｛〇、□、☆、◇、△｝
-				lineDashStyle : [5,3],	// 破線スタイル。例：[5,3]
+				lineWidth : 2, // 線の広さ
+				pointSize : 7, // ポイントのサイズ
+				pointShape : 'triangle', // 各スタイルは｛〇、□、☆、◇、△｝
+				lineDashStyle : [ 5, 3 ], // 破線スタイル。例：[5,3]
 				curveType : 'function', // 曲線スタイル
 			},
 			2 : {
@@ -750,7 +353,7 @@ function drawChart4() {
 		},
 		isStacked : true, // 積み立て
 		bar : {
-			groupWidth : '40%' // 棒の広さ
+			groupWidth : '50%' // 棒の広さ
 		},
 		hAxis : {
 			// title : '月ごと',
@@ -763,6 +366,10 @@ function drawChart4() {
 		},
 		vAxis : {
 			title : '人数 （人）',
+			gridlines :{
+				color : '#ddd',
+				count : 10
+			}
 		},
 		animation : {
 			duration : 1000,
@@ -776,10 +383,114 @@ function drawChart4() {
 		 */
 		curveType : 'function',
 		pointSize : 3,
-		pointShape : "circle" 
+		pointShape : "circle"
 	};
 
 	var chart = new google.visualization.ComboChart(document
 			.getElementById('chart_div4'));
+	chart.draw(data, options);
+}
+
+
+//=========================================================================
+//CHART5: COMBO CHART
+//=========================================================================
+function drawChart5() {
+	var data = new google.visualization.DataTable(jsonData);
+
+	var options = {
+		height : getChartHeight(),
+		title : '応募～採用状態',
+		titleTextStyle : {
+			color : '#fff',
+			fontSize : 25,
+			bold : true,
+			fontName : 'Arial'
+		},
+		chartArea : {
+			left : '15%',
+			top : '10%',
+			bottom : '15%',
+		},
+		backgroundColor: {
+            fill: '#424242',
+            stroke:'blue',
+          	strokeWidth:1
+		},
+
+		/*
+		 * データ行にとって、スタイルを定義できる。
+		 * もともと棒グラフですが、以下は｛0,1,2｝の行（または応募トレンド、採用予定、採用数）を別なグラフ種類に設定できる。
+		 * 応募トレンドは面に設定し、採用予定と採用数は折り線に設定してあります。
+		 */
+		seriesType : 'bars',
+		series : {
+			0 : {
+				// 面グラフなら、カラーと面の上部の線を変更できる
+				type : 'area',
+				color : '#FFFDE7',
+				lineWidth : 0, // 「0」になるなら、面の上部の線を表示しない。
+				pointSize : 0,
+			},
+			1 : {
+				// 折り線グラフなら、カラーや線の広さやポイントのサイズや破線やポイント形やラベルを変更できる。
+				type : 'line',
+				lineWidth : 2, // 線の広さ
+				pointSize : 5, // ポイントのサイズ
+				curveType : 'function', // 曲線スタイル
+			},
+			2 : {
+				type : 'line',
+				lineWidth : 2,
+				pointSize : 5,
+				curveType : 'function',
+			}
+		},
+		isStacked : true, // 積み立て
+		bar : {
+			groupWidth : '70%' // 棒の広さ
+		},
+		hAxis : {
+			// title : '月ごと',
+			slantedText : true,
+			textStyle :{
+				color : '#fff',
+			}
+		},
+		vAxis : {
+			title : '人数 （人）',
+			titleTextStyle : {
+				color : '#fff',
+				fontSize : 18,
+				bold : true
+			},
+			textStyle :{
+				color : '#fff',
+			}
+		},
+		animation : {
+			duration : 1000,
+			easing : 'out',
+			startup : true
+		},
+		// colors : default_colors,
+
+		/**
+		 * これは折り線のスタイルなんですが、この範囲に入れると、全ての折り線が更新される。
+		 */
+		curveType : 'function',
+		pointSize : 3,
+		pointShape : "circle",
+		legend :{
+			textStyle :{
+				color : '#fff',
+			}
+		},
+		colors : default_colors
+		
+	};
+
+	var chart = new google.visualization.ComboChart(document
+			.getElementById('chart_div5'));
 	chart.draw(data, options);
 }
