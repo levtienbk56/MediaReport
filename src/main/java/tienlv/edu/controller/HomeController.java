@@ -32,9 +32,9 @@ public class HomeController {
 		return "chartjsPage";
 	}
 
-	@RequestMapping(value = "d3js", method = RequestMethod.GET)
-	public String drawD3jsGraph() {
-		return "d3jsPage";
+	@RequestMapping(value = "colors", method = RequestMethod.GET)
+	public String getColors() {
+		return "colorsPage";
 	}
 
 	// @RequestMapping(value = "get-data", method = RequestMethod.POST)

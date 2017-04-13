@@ -61,7 +61,7 @@ body {
 			<div id="chart_div1" class="chart"></div>
 		</div>
 		<div class="panel-footer">
-			<p>デフォルト設定。カスタマイズがないもの</p>
+			<h4>デフォルト設定。カスタマイズがないもの</h4>
 		</div>
 	</div>
 
@@ -73,15 +73,14 @@ body {
 			<div id="chart_div2" class="chart"></div>
 		</div>
 		<div class="panel-footer">
-			<p>
-				<b>カスタマイズは以下である。</b>
-			</p>
+			<h4>カスタマイズは以下である。</h4>
 			<ul>
-				<li>　★　グラフ周りの空白領域を消します</li>
-				<li>　★　大きいタイトルになる</li>
-				<li>　★　棒のサイズを小さくなる</li>
-				<li>　★　面グラフの上部の線を消します</li>
-				<li>　★　線のポイントが表示される</li>
+				<li>★ アニメーションがある</li>
+				<li>★ グラフ周りの空白領域を消します</li>
+				<li>★ 大きいタイトルになる</li>
+				<li>★ 棒のサイズを小さくなる</li>
+				<li>★ 面グラフの上部の線を消します</li>
+				<li>★ 線のポイントが表示される</li>
 			</ul>
 		</div>
 	</div>
@@ -94,24 +93,80 @@ body {
 			<div id="chart_div3" class="chart"></div>
 		</div>
 		<div class="panel-footer">
-			<p>
-				<b>カスタマイズは以下である。</b>
-			</p>
+			<h4>カスタマイズは以下である。</h4>
 			<ul>
-				<li>　★　グラフ周りの空白領域を消します</li>
-				<li>　★　大きいタイトルになる</li>
-				<li>　★　棒のサイズを小さくなる</li>
-				<li>　★　面グラフの上部の線を消します</li>
-				<li><b>　★　面グラフのカラーが黄色にする</b></li>
-				<li>　★　採用予定の線が破線になる</li>
-				<li>　★　折り線が曲線になる</li>
-				<li>　★　線のポイントの形が変更される</li>
-				<li>　★　グラフのバックグラウンドのカラーが暗いカラーにする</li>
-				<li>　★　グラフの周り境界が表示される</li>
+				<li><b>★スタイル#2を含みます。</b></li>
+				<li>★ 面グラフのカラーが黄色にする</li>
+				<li>★ 折り線が曲線になる</li>
+			</ul>
+		</div>
+	</div>
+	<div class="panel panel-primary">
+		<div class="panel-heading">
+			<h4 id="chart4">スタイル ＃４</h4>
+		</div>
+		<div class="panel-body">
+			<div id="chart_div4" class="chart"></div>
+		</div>
+		<div class="panel-footer">
+			<h4>カスタマイズは以下である。</h4>
+			<ul>
+				<li><b>★スタイル#3を含みます。</b></li>
+				<li>★ 線のポイントの形が変更される</li>
+				<li>★ 採用予定の線が破線になる</li>
+				<li>★ 採用予定の線が破線になる</li>
+				<li>★ グラフのバックグラウンドのカラーが暗いカラーにする</li>
 			</ul>
 		</div>
 	</div>
 
+	<div class="panel panel-primary">
+		<div class="panel-heading">
+			<h4 id="chart5">スタイル ＃５</h4>
+		</div>
+		<div class="panel-body">
+			<div id="chart_div5" class="chart"></div>
+		</div>
+		<div class="panel-footer">
+			<h4>カスタマイズは以下である。</h4>
+			<ul>
+				<li>★ グラフ周りの空白領域を消します</li>
+				<li>★ 大きいタイトルになる</li>
+				<li>★ 棒のサイズを小さくなる</li>
+				<li>★ 面グラフの上部の線を消します</li>
+				<li>★ 面グラフのカラーが黄色にする</li>
+				<li>★ 採用予定の線が破線になる</li>
+				<li>★ 折り線が曲線になる</li>
+				<li>★ 線のポイントの形が変更される</li>
+				<li>★ グラフのバックグラウンドのカラーが暗いカラーにする</li>
+				<li>★ グラフの周り境界が表示される</li>
+			</ul>
+		</div>
+	</div>
+	
+	<div class="panel panel-primary">
+		<div class="panel-heading">
+			<h4 id="chart6">スタイル ＃６</h4>
+		</div>
+		<div class="panel-body">
+			<div id="chart_div6" class="chart"></div>
+		</div>
+		<div class="panel-footer">
+			<h4>カスタマイズは以下である。</h4>
+			<ul>
+				<li>★ グラフ周りの空白領域を消します</li>
+				<li>★ 大きいタイトルになる</li>
+				<li>★ 棒のサイズを小さくなる</li>
+				<li>★ 面グラフの上部の線を消します</li>
+				<li>★ 面グラフのカラーが黄色にする</li>
+				<li>★ 採用予定の線が破線になる</li>
+				<li>★ 折り線が曲線になる</li>
+				<li>★ 線のポイントの形が変更される</li>
+				<li>★ グラフのバックグラウンドのカラーが暗いカラーにする</li>
+				<li>★ グラフの周り境界が表示される</li>
+			</ul>
+		</div>
+	</div>
 </div>
 
 <!-- Google api JavaScript -->

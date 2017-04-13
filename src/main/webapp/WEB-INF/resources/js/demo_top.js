@@ -28,10 +28,12 @@ $(window).resize(function() {
 	drawChart1();
 	drawChart2();
 	drawChart3();
+	drawChart4();
 });
 google.setOnLoadCallback(drawChart1);
 google.setOnLoadCallback(drawChart2);
 google.setOnLoadCallback(drawChart3);
+google.setOnLoadCallback(drawChart4);
 
 // ========================== JSON DATA DEMO ================================
 // {
@@ -611,9 +613,94 @@ function drawChart2() {
 
 
 //=========================================================================
-//CHART2: COMBO CHART
+//CHART3: COMBO CHART
 //=========================================================================
 function drawChart3() {
+	var data = new google.visualization.DataTable(jsonData);
+
+	var options = {
+		height : getChartHeight(),
+		title : '応募～採用状態',
+		titleTextStyle : {
+			color : 'black',
+			fontSize : 25,
+			bold : true,
+			fontName : 'Arial'
+		},
+		chartArea : {
+			left : '15%',
+			top : '10%'
+		},
+
+		/*
+		 * データ行にとって、スタイルを定義できる。
+		 * もともと棒グラフですが、以下は｛0,1,2｝の行（または応募トレンド、採用予定、採用数）を別なグラフ種類に設定できる。
+		 * 応募トレンドは面に設定し、採用予定と採用数は折り線に設定してあります。
+		 */
+		seriesType : 'bars',
+		series : {
+			0 : {
+				// 面グラフなら、カラーと面の上部の線を変更できる
+				type : 'area',
+				color : '#ccff33',
+				lineWidth : 0, 	// 「0」になるなら、面の上部の線を表示しない。
+				pointSize : 0,
+			},
+			1 : {
+				// 折り線グラフなら、カラーや線の広さやポイントのサイズや破線やポイント形やラベルを変更できる。
+				type : 'line',
+				lineWidth : 2,			//　線の広さ
+				pointSize : 5,			//　ポイントのサイズ
+				curveType : 'function', // 曲線スタイル
+			},
+			2 : {
+				type : 'line',
+				lineWidth : 2,
+				pointSize : 5,
+				curveType : 'function',
+			}
+		},
+		isStacked : true, // 積み立て
+		bar : {
+			groupWidth : '40%' // 棒の広さ
+		},
+		hAxis : {
+			// title : '月ごと',
+			slantedText : true,
+			titleTextStyle : {
+				color : 'black',
+				fontSize : 18,
+				bold : true
+			}
+		},
+		vAxis : {
+			title : '人数 （人）',
+		},
+		animation : {
+			duration : 1000,
+			easing : 'out',
+			startup : true
+		},
+		// colors : default_colors,
+
+		/**
+		 * これは折り線のスタイルなんですが、この範囲に入れると、全ての折り線が更新される。
+		 */
+		curveType : 'function',
+		pointSize : 3,
+		pointShape : "circle" 
+	};
+
+	var chart = new google.visualization.ComboChart(document
+			.getElementById('chart_div3'));
+	chart.draw(data, options);
+}
+
+
+//=========================================================================
+//CHART4: COMBO CHART
+//=========================================================================
+function drawChart4() {
 	var data = new google.visualization.DataTable(jsonData);
 
 	var options = {
@@ -649,19 +736,21 @@ function drawChart3() {
 				// 折り線グラフなら、カラーや線の広さやポイントのサイズや破線やポイント形やラベルを変更できる。
 				type : 'line',
 				lineWidth : 2,			//　線の広さ
-				pointSize : 5,			//　ポイントのサイズ
+				pointSize : 7,			//　ポイントのサイズ
+				pointShape : 'triangle', 	// 各スタイルは｛〇、□、☆、◇、△｝
+				lineDashStyle : [5,3],	// 破線スタイル。例：[5,3]
 				curveType : 'function', // 曲線スタイル
 			},
 			2 : {
 				type : 'line',
 				lineWidth : 2,
-				pointSize : 5,
+				pointSize : 6,
 				curveType : 'function',
 			}
 		},
 		isStacked : true, // 積み立て
 		bar : {
-			groupWidth : '50%' // 棒の広さ
+			groupWidth : '40%' // 棒の広さ
 		},
 		hAxis : {
 			// title : '月ごと',
@@ -691,6 +780,6 @@ function drawChart3() {
 	};
 
 	var chart = new google.visualization.ComboChart(document
-			.getElementById('chart_div3'));
+			.getElementById('chart_div4'));
 	chart.draw(data, options);
 }

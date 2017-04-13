@@ -25,7 +25,7 @@
 				<li><a
 					href="${pageContext.servletContext.contextPath}/google-chart">Google
 						Chart</a></li>
-				<!-- <li><a href="${pageContext.servletContext.contextPath}/d3js">D3js</a></li> -->
+				<li><a href="${pageContext.servletContext.contextPath}/colors">Colors</a></li> 
 
 			</ul>
 		</div>

@@ -40,6 +40,13 @@
 		<put-attribute name="page-body"
 			value="/WEB-INF/views/bodyfragments/google_chart.jsp"></put-attribute>
 	</definition>
+	
+	<!-- google graph -->
+	<definition name="colorsPage" extends="temp.definition">
+		<put-attribute name="title" value="color"></put-attribute>
+		<put-attribute name="page-body"
+			value="/WEB-INF/views/bodyfragments/colors.jsp"></put-attribute>
+	</definition>
 
 	<!-- d3js graph -->
 	<definition name="d3jsPage" extends="temp.definition">
