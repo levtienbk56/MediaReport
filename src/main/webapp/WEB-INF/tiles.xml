@@ -27,9 +27,9 @@
 			value="/WEB-INF/views/bodyfragments/home.jsp"></put-attribute>
 	</definition>
 	
-	<!-- google graph -->
+	<!-- Top graph -->
 	<definition name="demoTopPage" extends="temp.definition">
-		<put-attribute name="title" value="Google Chart　ライブラリ"></put-attribute>
+		<put-attribute name="title" value="HOME"></put-attribute>
 		<put-attribute name="page-body"
 			value="/WEB-INF/views/bodyfragments/demo_top.jsp"></put-attribute>
 	</definition>

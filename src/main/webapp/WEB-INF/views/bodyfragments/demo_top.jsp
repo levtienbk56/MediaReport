@@ -23,16 +23,22 @@ footer {
 }
 
 .body-container {
-	margin-top: 120px;
+	padding-top: 120px;
+	background-color: #fff;
 }
 
 .chart {
 	width: 100%;
-	min-height: 800px;
+	min-height: 650px;
 }
 
 div.inline {
 	float: left;
+}
+
+body {
+	background-image:
+		url("https://dev5.recop.jp/recruiter/images/recop/bodyBg.gif");
 }
 </style>
 
@@ -40,17 +46,69 @@ div.inline {
 <!-- Body -->
 <div class="container body-container">
 	<div class="row">
-		<h3><a id="chart_top1">（本部）分析TOP</a></h3>
-		<div class="col-md-12">
-			<div id="chart_div1" class="chart"></div>
+		<div>
+			<h2 style="text-align: center">（本部）分析TOP</h2>
 		</div>
 	</div>
-	
 	<hr />
-	<div class="row">
-		<h3><a id="table_top1">（本部）コスト登録</a></h3><br/>
-		<div class="col-md-12">
-			<div id="table_div1"></div>
+	<br />
+
+	<div class="panel panel-primary">
+		<div class="panel-heading">
+			<h4 id="chart1">スタイル ＃１</h4>
+		</div>
+		<div class="panel-body">
+			<div id="chart_div1" class="chart"></div>
+		</div>
+		<div class="panel-footer">
+			<p>デフォルト設定。カスタマイズがないもの</p>
+		</div>
+	</div>
+
+	<div class="panel panel-primary">
+		<div class="panel-heading">
+			<h4 id="chart2">スタイル ＃2</h4>
+		</div>
+		<div class="panel-body">
+			<div id="chart_div2" class="chart"></div>
+		</div>
+		<div class="panel-footer">
+			<p>
+				<b>カスタマイズは以下である。</b>
+			</p>
+			<ul>
+				<li>　★　グラフ周りの空白領域を消します</li>
+				<li>　★　大きいタイトルになる</li>
+				<li>　★　棒のサイズを小さくなる</li>
+				<li>　★　面グラフの上部の線を消します</li>
+				<li>　★　線のポイントが表示される</li>
+			</ul>
+		</div>
+	</div>
+
+	<div class="panel panel-primary">
+		<div class="panel-heading">
+			<h4 id="chart3">スタイル ＃3</h4>
+		</div>
+		<div class="panel-body">
+			<div id="chart_div3" class="chart"></div>
+		</div>
+		<div class="panel-footer">
+			<p>
+				<b>カスタマイズは以下である。</b>
+			</p>
+			<ul>
+				<li>　★　グラフ周りの空白領域を消します</li>
+				<li>　★　大きいタイトルになる</li>
+				<li>　★　棒のサイズを小さくなる</li>
+				<li>　★　面グラフの上部の線を消します</li>
+				<li><b>　★　面グラフのカラーが黄色にする</b></li>
+				<li>　★　採用予定の線が破線になる</li>
+				<li>　★　折り線が曲線になる</li>
+				<li>　★　線のポイントの形が変更される</li>
+				<li>　★　グラフのバックグラウンドのカラーが暗いカラーにする</li>
+				<li>　★　グラフの周り境界が表示される</li>
+			</ul>
 		</div>
 	</div>
 
