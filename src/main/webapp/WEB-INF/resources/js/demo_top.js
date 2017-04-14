@@ -175,7 +175,7 @@ function drawChart2() {
 		},
 		isStacked : true, // 積み立て
 		bar : {
-			groupWidth : '40%' // 棒の広さ
+			groupWidth : '50%' // 棒の広さ
 		},
 		hAxis : {
 			// title : '月ごと',
@@ -240,7 +240,7 @@ function drawChart3() {
 			0 : {
 				// 面グラフなら、カラーと面の上部の線を変更できる
 				type : 'area',
-				color : '#ccff33',
+				color : '#9E9E9E',
 				lineWidth : 0, // 「0」になるなら、面の上部の線を表示しない。
 				pointSize : 0,
 			},
@@ -260,7 +260,7 @@ function drawChart3() {
 		},
 		isStacked : true, // 積み立て
 		bar : {
-			groupWidth : '50%' // 棒の広さ
+			groupWidth : '70%' // 棒の広さ
 		},
 		hAxis : {
 			// title : '月ごと',
@@ -279,7 +279,6 @@ function drawChart3() {
 			easing : 'out',
 			startup : true
 		},
-		// colors : default_colors,
 
 		/**
 		 * これは折り線のスタイルなんですが、この範囲に入れると、全ての折り線が更新される。
@@ -292,6 +291,7 @@ function drawChart3() {
 	var chart = new google.visualization.ComboChart(document
 			.getElementById('chart_div3'));
 	chart.draw(data, options);
+	
 }
 
 // =========================================================================
@@ -339,7 +339,7 @@ function drawChart4() {
 				// 折り線グラフなら、カラーや線の広さやポイントのサイズや破線やポイント形やラベルを変更できる。
 				type : 'line',
 				lineWidth : 2, // 線の広さ
-				pointSize : 7, // ポイントのサイズ
+				pointSize : 8, // ポイントのサイズ
 				pointShape : 'triangle', // 各スタイルは｛〇、□、☆、◇、△｝
 				lineDashStyle : [ 5, 3 ], // 破線スタイル。例：[5,3]
 				curveType : 'function', // 曲線スタイル
@@ -376,7 +376,7 @@ function drawChart4() {
 			easing : 'out',
 			startup : true
 		},
-		// colors : default_colors,
+		colors : default_colors2,
 
 		/**
 		 * これは折り線のスタイルなんですが、この範囲に入れると、全ての折り線が更新される。
@@ -473,7 +473,6 @@ function drawChart5() {
 			easing : 'out',
 			startup : true
 		},
-		// colors : default_colors,
 
 		/**
 		 * これは折り線のスタイルなんですが、この範囲に入れると、全ての折り線が更新される。
@@ -487,10 +486,19 @@ function drawChart5() {
 			}
 		},
 		colors : default_colors
-		
 	};
 
-	var chart = new google.visualization.ComboChart(document
+	var chart5 = new google.visualization.ComboChart(document
 			.getElementById('chart_div5'));
-	chart.draw(data, options);
+	
+	// add listener before drawing chart
+	google.visualization.events.addListener(chart5, 'ready', myReadyHandler);
+	//google.visualization.events.addListener(chart5, 'select', mySelectHandler);
+	
+	// draw chart
+	chart5.draw(data, options);
+	
+	function myReadyHandler(e){
+	}
 }
+

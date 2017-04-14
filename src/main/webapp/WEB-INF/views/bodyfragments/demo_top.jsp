@@ -2,11 +2,12 @@
 	pageEncoding="UTF-8"%>
 
 <!-- CSS style -->
+<!-- 
 <link rel="stylesheet" type="text/css"
 	href="http://docs.handsontable.com/pro/bower_components/handsontable-pro/dist/handsontable.full.min.css">
 <link rel="stylesheet" type="text/css"
 	href="http://handsontable.com/static/css/main.css">
-
+ -->
 <style>
 footer {
 	position: relative;
@@ -39,6 +40,12 @@ div.inline {
 body {
 	background-image:
 		url("https://dev5.recop.jp/recruiter/images/recop/bodyBg.gif");
+}
+
+rect{
+	rx:"10";
+	ry:"10";
+	
 }
 </style>
 
@@ -144,11 +151,14 @@ body {
 <script src="https://www.google.com/jsapi"></script>
 
 <!-- vendor lib -->
+<!-- 
 <script
 	src="http://docs.handsontable.com/pro/bower_components/handsontable-pro/dist/handsontable.full.min.js"></script>
-
+ -->
+ 
 <!-- Custom javascript -->
 <script
 	src="${pageContext.servletContext.contextPath}/resources/js/demo_top.js"></script>
-<script
+<!-- <script
 	src="${pageContext.servletContext.contextPath}/resources/js/editable_table.js"></script>
+	 -->
