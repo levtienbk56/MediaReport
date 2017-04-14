@@ -47,12 +47,12 @@
 		<put-attribute name="page-body"
 			value="/WEB-INF/views/bodyfragments/colors.jsp"></put-attribute>
 	</definition>
-
-	<!-- d3js graph -->
-	<definition name="d3jsPage" extends="temp.definition">
-		<put-attribute name="title" value="D3js　ライブラリ"></put-attribute>
+	
+	<!-- chart editor -->
+	<definition name="tablePage" extends="temp.definition">
+		<put-attribute name="title" value="table editor"></put-attribute>
 		<put-attribute name="page-body"
-			value="/WEB-INF/views/bodyfragments/d3js.jsp"></put-attribute>
+			value="/WEB-INF/views/bodyfragments/table.jsp"></put-attribute>
 	</definition>
 	
 	<!-- chartjs graph -->

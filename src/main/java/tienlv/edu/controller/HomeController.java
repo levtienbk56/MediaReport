@@ -32,6 +32,11 @@ public class HomeController {
 		return "chartjsPage";
 	}
 
+	@RequestMapping(value = "table", method = RequestMethod.GET)
+	public String getChartEditorPage() {
+		return "tablePage";
+	}
+	
 	@RequestMapping(value = "colors", method = RequestMethod.GET)
 	public String getColors() {
 		return "colorsPage";

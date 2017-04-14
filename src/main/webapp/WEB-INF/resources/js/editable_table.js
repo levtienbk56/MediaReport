@@ -1,52 +1,208 @@
 document.addEventListener("DOMContentLoaded", function() {
+	// =================== input (data) =======================
 	var dataObject = [ {
-		costName : '2016 通年施策（初回キャンペーン適用）',
-		editType : '一括',
-		dateFrom : '2016/07/01',
-		dateTo : '2016/12/23',
-		amount : 11000000
-	}, {
-		costName : '年末採用強化施策 2016 3Q',
-		editType : '一括',
-		dateFrom : '2016/10/01',
-		dateTo : '2016/12/13',
-		amount : 600000
-	}, {
-		costName : '2017 GW施策',
-		editType : '一括',
-		dateFrom : '2016/07/23',
-		dateTo : '2016/07/24',
-		amount : 0
-	}, ];
-
-	var container = document.getElementById('table_div1');
+			shop : 'A店舗',
+			type : '予定',
+			month1 : 3,
+			month2 : 3,
+			month3 : 1,
+			rate : 1,  
+			lack : 0
+		}, {
+			shop : 'A店舗',
+			type : '実績',
+			month1 : 2,
+			month2 : 0,
+			month3 : 0,
+			editType : '一括',
+			rate : 1,  
+			lack : 0
+		}, {
+			shop : 'B店舗',
+			type : '予定',
+			month1 : 1,
+			month2 : 1,
+			month3 : 0,
+			editType : '一括',
+			rate : 0.7,  
+			lack : 2
+		}, {
+			shop : 'B店舗',
+			type : '実績',
+			month1 : 1,
+			month2 : 0,
+			month3 : 0,
+			editType : '一括',
+			rate : 0.7,  
+			lack : 2
+		}, {
+			shop : 'C店舗',
+			type : '予定',
+			month1 : 3,
+			month2 : 1,
+			month3 : 2,
+			editType : '一括',
+			rate : 0.5,  
+			lack : 8
+		}, {
+			shop : 'C店舗',
+			type : '実績',
+			month1 : 2,
+			month2 : 0,
+			month3 : 1,
+			editType : '一括',
+			rate : 0.5,  
+			lack : 8
+		}
+	];
+	
+	// input (header)
+	var colHeaders = [ '店舗名','', '2017/1','2017/2','2017/3','成功率', '不足数' ];
+	
+	// ========== define function (for formating) ==============================
+	function actualColorRenderer(instance, td, row, col, prop, value, cellProperties) {
+		Handsontable.renderers.TextRenderer.apply(this, arguments);
+		td.style.background = '#D8E4BC';
+	};
+	
+	function lackColorRenderer(instance, td, row, col, prop, value,	cellProperties) {
+		console.log("call lackColorRenderer()");
+		Handsontable.renderers.TextRenderer.apply(this, arguments);
+		if (!value || value !== '') {
+			if (parseInt(value, 10) === 1) {
+				td.style.background = '#C4D79B';
+			}else if (parseInt(value, 10) === 2) {
+				td.style.background = '#EBF1DE';
+			}else if (parseInt(value, 10) === 3) {
+				td.style.background = '#FCD5B4';
+			}else if (parseInt(value, 10) === 4) {
+				td.style.background = '#E6B8B7';
+			}else if (parseInt(value, 10) >= 5) {
+				td.style.background = '#DA9694';
+			}
+		} 
+	};
+	
+	function getMergeArray(){
+		console.log("call getMergeArray()");
+		var colz = colHeaders.length;
+		var arr = [];
+		for (var i=0; i< dataObject.length ; i++){
+			if(i %2 === 0){
+				arr.push({row: i, col: 0, rowspan: 2, colspan: 1});
+				arr.push({row: i, col: colz-1, rowspan: 2, colspan: 1});
+				arr.push({row: i, col: colz-2, rowspan: 2, colspan: 1});
+			}
+		};
+		return arr;
+	};
+	
+	function getAlignArray(){
+		console.log("call getAlignArray()");
+		var arr =[], i, j;
+		var colz = colHeaders.length;
+		var rowz = dataObject.length;
+		for (i=0; i< rowz; i++){
+			arr.push({row: i, col: colz-1, className: "htCenter htMiddle"});
+			arr.push({row: i, col: colz-2, className: "htCenter htMiddle"});
+			arr.push({row: i, col: 0, className: "htLeft htMiddle"});
+		}
+		return arr;
+	};
+	
+	// =================== define setting (option) =================
 	var setting = {
 		data : dataObject,
 		columns : [ {
-			data : 'costName',
+			data : 'shop',
+			type : 'text',
+			editor : false  // still can copy & paste
+		},{
+			data : 'type',
 			type : 'text',
 			editor : false
 		}, {
-			data : 'editType',
-			type : 'dropdown',
-			source : [ '一括', '月別に登録' ]
+			data : 'month1',
+			type : 'text',
+			editor : false
 		}, {
-			data : 'dateFrom',
-			type : 'date',
-			dateFormat : 'YYYY/MM/DD',
+			data : 'month2',
+			type : 'text',
+			editor : false
 		}, {
-			data : 'dateTo',
-			type : 'date',
-			dateFormat : 'YYYY/MM/DD'
-		}, {
-			data : 'amount',
-			type : 'numeric'
+			data : 'month3',
+			type : 'text',
+			editor : false
+		}, 
+		{
+			data : 'rate',
+			type : 'numeric',
+			format : '%',
+			editor : false
+		},
+		{
+			data : 'lack',
+			type : 'numeric',
 		} ],
-		colHeaders : [ 'コスト名', 'コストタイプ', '開始年月', '終了年月', '金額' ]
+		colHeaders: true,
+		colHeaders : colHeaders,
+		// contextMenu: true,
+		
+		cells : function(row, col, prop) {
+			var colz = colHeaders.length;
+			var cellProperties = {};
+			// All row is readOnly. Difference with editor: false
+			// cellProperties.readOnly = true;  
+			
+			if((row +1) %2 == 0 && col >=2 && col <=colz-3){
+				cellProperties.renderer = actualColorRenderer;  // call everytime you interactive
+			}
+			if (col === colz-1){
+				cellProperties.renderer = lackColorRenderer; 
+			}
+			return cellProperties;
+		},
+		// Merge cell
+		mergeCells: getMergeArray(),	// call 1 time when ready
+		
+		// align cell
+		cell: getAlignArray(),
 	};
 
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	// create table
+	var container = document.getElementById('table_div1');
 	var hot = new Handsontable(container, setting);
 
+	//========== DUMMY FUNCTION ========
 	function bindDumpButton() {
 		if (typeof Handsontable === "undefined") {
 			return;

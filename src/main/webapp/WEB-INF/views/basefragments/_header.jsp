@@ -25,6 +25,7 @@
 				<li><a
 					href="${pageContext.servletContext.contextPath}/google-chart">Google
 						Chart</a></li>
+				<li><a href="${pageContext.servletContext.contextPath}/table">Table Editor</a></li> 
 				<li><a href="${pageContext.servletContext.contextPath}/colors">Colors</a></li> 
 
 			</ul>
