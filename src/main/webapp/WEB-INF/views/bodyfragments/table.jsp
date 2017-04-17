@@ -51,6 +51,18 @@ div.inline {
 		</div>
 	</div>
 	
+	<div class="panel panel-primary">
+		<div class="panel-heading">
+			<h4>(店舗）採用状況詳細</h4>
+		</div>
+		<div class="panel-body">
+			<div id="table_div2"></div>
+		</div>
+		<div class="panel-footer">
+			<p>NOTE ※過去３ヶ月＋未来１２ヶ月分を表示</p>
+		</div>
+	</div>
+	
 </div>
 
 <!-- Google api JavaScript -->
