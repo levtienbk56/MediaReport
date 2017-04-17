@@ -17,7 +17,7 @@ footer {
 }
 
 .body-container {
-	margin-top: 120px;
+	margin: 120px 120px 120px 120px ;	
 }
 
 .chart {
@@ -36,7 +36,7 @@ div.inline {
 <link type="text/css" rel="stylesheet" href="https://docs.handsontable.com/0.15.1/bower_components/handsontable/dist/handsontable.full.min.css">
 
 
-<div class="container body-container">
+<div class="body-container">
 	<div class="panel panel-primary">
 		<div class="panel-heading">
 			<h4>（本部）分析TOP</h4>

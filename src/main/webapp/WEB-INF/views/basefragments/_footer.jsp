@@ -23,3 +23,6 @@
 		</div>
 	</div>
 </footer>
+
+<script
+	src="${pageContext.servletContext.contextPath}/resources/js/footer.js"></script>
