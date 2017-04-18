@@ -9,6 +9,19 @@
 	href="http://handsontable.com/static/css/main.css">
  -->
 <style>
+body {
+	background-image:
+		url("https://dev5.recop.jp/recruiter/images/recop/bodyBg.gif");
+}
+.body-container {
+	width: 968px;
+	margin: auto ;	
+	margin-top : 120px;
+	display: block;
+    clear: both;
+    background-color: #fff;
+}
+
 footer {
 	position: relative;
 	right: 0;
@@ -23,29 +36,38 @@ footer {
 	background-color: black;
 }
 
-.body-container {
-	padding-top: 120px;
-	background-color: #fff;
-}
-
-.chart {
-	width: 100%;
-	min-height: 650px;
-}
-
 div.inline {
 	float: left;
 }
-
-body {
-	background-image:
-		url("https://dev5.recop.jp/recruiter/images/recop/bodyBg.gif");
+.center{
+	margin: 0 auto;
+	text-align:center;
+}
+div.chart {
+	width: 750px;
+	position: relative;
+}
+div.sumary {
+	width: 185px;
+	height: 300px;
+}
+div.sumary > .info {
+	height : 240px;
+	width : 150px;
+	background-color: #FDEADA;
+	border: 1px dashed blue;
+    border-radius: 20px;
 }
 
-rect{
-	rx:"10";
-	ry:"10";
-	
+button.shop-detail {
+    position: absolute;
+    right: 10px;
+    border: 3px solid #F87347;
+    background-color: #fff;
+    bottom: 10px;
+}
+div.panel-body{
+	padding: 0;
 }
 </style>
 
@@ -62,10 +84,29 @@ rect{
 
 	<div class="panel panel-primary">
 		<div class="panel-heading">
-			<h4 id="chart1">スタイル ＃１</h4>
+			<h4 id="chart">メンインブラック</h4>
 		</div>
 		<div class="panel-body">
-			<div id="chart_div1" class="chart"></div>
+			<div class="sumary inline">
+				<p class="center">媒体応募状況</p>
+				<div class="info center">
+				</div>
+			</div>
+			<div class="chart inline">
+				<div id="chart_div"></div>
+				<button class="shop-detail">詳細確認</button>
+			</div>
+		</div>
+	</div>
+	<hr />
+	<br />
+	
+	<div class="panel panel-primary">
+		<div class="panel-heading">
+			<h4 id="chart1">デフォルト設定</h4>
+		</div>
+		<div class="panel-body">
+			<div id="chart_div1"></div>
 		</div>
 		<div class="panel-footer">
 			<h4>デフォルト設定。カスタマイズがないもの</h4>
@@ -74,10 +115,10 @@ rect{
 
 	<div class="panel panel-primary">
 		<div class="panel-heading">
-			<h4 id="chart2">スタイル ＃2</h4>
+			<h4 id="chart3">スタイル ＃3</h4>
 		</div>
 		<div class="panel-body">
-			<div id="chart_div2" class="chart"></div>
+			<div id="chart_div3"></div>
 		</div>
 		<div class="panel-footer">
 			<h4>カスタマイズは以下である。</h4>
@@ -88,21 +129,6 @@ rect{
 				<li>★ 棒のサイズを小さくなる</li>
 				<li>★ 面グラフの上部の線を消します</li>
 				<li>★ 線のポイントが表示される</li>
-			</ul>
-		</div>
-	</div>
-
-	<div class="panel panel-primary">
-		<div class="panel-heading">
-			<h4 id="chart3">スタイル ＃3</h4>
-		</div>
-		<div class="panel-body">
-			<div id="chart_div3" class="chart"></div>
-		</div>
-		<div class="panel-footer">
-			<h4>カスタマイズは以下である。</h4>
-			<ul>
-				<li><b>★スタイル#2を含みます。</b></li>
 				<li>★ 面グラフのカラーが黄色にする</li>
 				<li>★ 折り線が曲線になる</li>
 			</ul>
@@ -113,7 +139,7 @@ rect{
 			<h4 id="chart4">スタイル ＃４</h4>
 		</div>
 		<div class="panel-body">
-			<div id="chart_div4" class="chart"></div>
+			<div id="chart_div4"></div>
 		</div>
 		<div class="panel-footer">
 			<h4>カスタマイズは以下である。</h4>
@@ -134,7 +160,7 @@ rect{
 			<h4 id="chart5">スタイル ＃５</h4>
 		</div>
 		<div class="panel-body">
-			<div id="chart_div5" class="chart"></div>
+			<div id="chart_div5"></div>
 		</div>
 		<div class="panel-footer">
 			<h4>カスタマイズは以下である。</h4>

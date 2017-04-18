@@ -5,7 +5,7 @@ function getChartHeight() {
 	var dh = $(document).height();
 
 	if (ww > 1600)
-		return 700;
+		return 500;
 }
 
 // === load chart library ===
@@ -22,14 +22,16 @@ var default_colors2 = ['#00BCD4', '#FFF59D', '#FDD835', '#BCAAA4', '#795548', '#
 
 // === responsive graph ===
 $(window).resize(function() {
+	drawChart();
 	drawChart1();
-	drawChart2();
 	drawChart3();
 	drawChart4();
 	drawChart5();
 });
+
+// draw chart when resource is loaded
+google.setOnLoadCallback(drawChart);
 google.setOnLoadCallback(drawChart1);
-google.setOnLoadCallback(drawChart2);
 google.setOnLoadCallback(drawChart3);
 google.setOnLoadCallback(drawChart4);
 google.setOnLoadCallback(drawChart5);
@@ -59,88 +61,62 @@ google.setOnLoadCallback(drawChart5);
 // same CSV file
 var jsonData = {
         "cols": [
-               {"label":"月ごと","type":"string"},
-               {"label":"応募トレンド","type":"number"},
-               {"label":"採用予定","type":"number"},
-               {"label":"採用数","type":"number"},
-               {"label":"DOMO!NET","type":"number"},
-               {"label":"バイトル","type":"number"},
-               {"label":"マイナビバイト","type":"number"},
-               {"label":"フロム・エーキャリア","type":"number"},
-				 {"label":"Workin","type":"number"},
-				 {"label":"ジョブセンス","type":"number"},
-				 {"label":"Weban","type":"number"},
-				 {"label":"Girls&Co.","type":"number"},
-				 {"label":"おうぼうける君","type":"number"},
-				 {"label":"イーアイデム","type":"number"},
-               {"label":"応募-採用HP","type":"number"}
+			{label:"月ごと", type:"string"},
+			{label:"応募トレン", type:"number"},
+			{label:"採用予定", type:"number"},
+			{label:"採用数", type:"number"},
+			{label:"おうぼうける君", type:"number"},
+			{label:"バイトル", type:"number"},
+			{label:"マイナビバイト", type:"number"},
+			{label:"ジョブセンス", type:"number"},
+			{label:"Weban", type:"number"},
+			{label:"イーアイデム", type:"number"},
+			{label:"フロム・エーキャリア", type:"number"},
+			{label:"Workin", type:"number"},
+			{label:"Girls&Co.", type:"number"},
+			{label:"DOMO!NET", type:"number"},
+			{label:"採用HP", type:"number"}
              ],
         "rows": [
-				{"c":[{"v":"2016年06月"},{"v":1000},{"v":50},{"v":40},{"v":0},{"v":77},{"v":0},{"v":0},{"v":0},{"v":0},{"v":0},{"v":1},{"v":0},{"v":0},{"v":null}]},
-				{"c":[{"v":"2016年07月"},{"v":1800},{"v":200},{"v":150},{"v":0},{"v":223},{"v":34},{"v":0},{"v":0},{"v":20},{"v":11},{"v":4},{"v":0},{"v":3},{"v":null}]},
-				{"c":[{"v":"2016年08月"},{"v":2000},{"v":1000},{"v":800},{"v":0},{"v":253},{"v":276},{"v":0},{"v":1},{"v":112},{"v":71},{"v":0},{"v":363},{"v":33},{"v":null}]},
-				{"c":[{"v":"2016年09月"},{"v":2400},{"v":2000},{"v":1700},{"v":0},{"v":466},{"v":510},{"v":0},{"v":1},{"v":99},{"v":70},{"v":0},{"v":1421},{"v":43},{"v":null}]},
-				{"c":[{"v":"2016年10月"},{"v":3000},{"v":1500},{"v":1400},{"v":1},{"v":687},{"v":620},{"v":0},{"v":1},{"v":142},{"v":151},{"v":0},{"v":1851},{"v":63},{"v":null}]},
-				{"c":[{"v":"2016年11月"},{"v":2000},{"v":600},{"v":550},{"v":0},{"v":464},{"v":349},{"v":0},{"v":0},{"v":87},{"v":41},{"v":0},{"v":732},{"v":29},{"v":null}]},
-				{"c":[{"v":"2016年12月"},{"v":1500},{"v":500},{"v":350},{"v":0},{"v":156},{"v":169},{"v":0},{"v":2},{"v":50},{"v":37},{"v":0},{"v":437},{"v":21},{"v":null}]},
-				{"c":[{"v":"2017年01月"},{"v":1600},{"v":700},{"v":600},{"v":1},{"v":222},{"v":234},{"v":0},{"v":0},{"v":61},{"v":80},{"v":0},{"v":473},{"v":19},{"v":null}]},
-				{"c":[{"v":"2017年02月"},{"v":1600},{"v":1000},{"v":890},{"v":0},{"v":387},{"v":446},{"v":26},{"v":2},{"v":59},{"v":95},{"v":0},{"v":442},{"v":30},{"v":null}]},
-				{"c":[{"v":"2017年03月"},{"v":1900},{"v":1200},{"v":1000},{"v":0},{"v":420},{"v":480},{"v":65},{"v":0},{"v":52},{"v":84},{"v":0},{"v":894},{"v":45},{"v":null}]},
-				{"c":[{"v":"2017年04月"},{"v":2000},{"v":1100},{"v":950},{"v":2},{"v":310},{"v":387},{"v":26},{"v":0},{"v":77},{"v":58},{"v":0},{"v":878},{"v":48},{"v":null}]},
-				{"c":[{"v":"2017年05月"},{"v":1800},{"v":1300},{"v":null},{"v":0},{"v":0},{"v":0},{"v":0},{"v":0},{"v":0},{"v":0},{"v":0},{"v":0},{"v":0},{"v":null}]},
-
+			{"c":[{"v":"2016年11月"},{"v":1400},{"v":1300},{"v":1100},{"v":732},{"v":464},{"v":349},{"v":87},{"v":41},{"v":29},{"v":0},{"v":0},{"v":0},{"v":0},{"v":0}]},
+			{"c":[{"v":"12月"},{"v":1200},{"v":800},{"v":700},{"v":437},{"v":156},{"v":169},{"v":50},{"v":37},{"v":21},{"v":0},{"v":2},{"v":0},{"v":0},{"v":0}]},
+			{"c":[{"v":"2017年01月"},{"v":1300},{"v":1000},{"v":850},{"v":473},{"v":222},{"v":234},{"v":61},{"v":80},{"v":19},{"v":0},{"v":0},{"v":0},{"v":1},{"v":0}]},
+			{"c":[{"v":"2月"},{"v":1500},{"v":1200},{"v":1190},{"v":442},{"v":387},{"v":446},{"v":59},{"v":95},{"v":30},{"v":26},{"v":2},{"v":0},{"v":0},{"v":0}]},
+			{"c":[{"v":"3月"},{"v":1700},{"v":1600},{"v":1400},{"v":894},{"v":420},{"v":480},{"v":52},{"v":84},{"v":45},{"v":65},{"v":0},{"v":0},{"v":0},{"v":0}]},
+			{"c":[{"v":"4月"},{"v":1600},{"v":1400},{"v":1290},{"v":878},{"v":310},{"v":387},{"v":77},{"v":58},{"v":48},{"v":26},{"v":0},{"v":0},{"v":2},{"v":0}]},
+			{"c":[{"v":"5月"},{"v":1300},{"v":1000},{"v":null},{"v":0},{"v":0},{"v":0},{"v":0},{"v":0},{"v":0},{"v":0},{"v":0},{"v":0},{"v":0},{"v":0}]},
+			{"c":[{"v":"6月"},{"v":900},{"v":820},{"v":null},{"v":0},{"v":0},{"v":0},{"v":0},{"v":0},{"v":0},{"v":0},{"v":0},{"v":0},{"v":0},{"v":0}]},
+			{"c":[{"v":"7月"},{"v":1100},{"v":980},{"v":null},{"v":0},{"v":0},{"v":0},{"v":0},{"v":0},{"v":0},{"v":0},{"v":0},{"v":0},{"v":0},{"v":0}]}
              ]
        };
 
-//
-// =========================================================================
-// CHART１: COMBO CHART
-// =========================================================================
-function drawChart1() {
+//=========================================================================
+//CHART: MAIN CHART
+//=========================================================================
+function drawChart() {
 	var data = new google.visualization.DataTable(jsonData);
 
 	var options = {
-		title : '応募～採用状態',
-		seriesType : 'bars',
-		series : {
-			0 : {
-				type : 'area',
-			},
-			1 : {
-				type : 'line',
-			},
-			2 : {
-				type : 'line',
-			}
-		},
-		isStacked : true, // 積み立て
-	};
-
-	var chart = new google.visualization.ComboChart(document
-			.getElementById('chart_div1'));
-	chart.draw(data, options);
-}
-// =========================================================================
-// CHART2: COMBO CHART
-// =========================================================================
-function drawChart2() {
-	var data = new google.visualization.DataTable(jsonData);
-
-	var options = {
-		height : getChartHeight(),
+		height : 300,
+		width : 750,
 		title : '応募～採用状態',
 		titleTextStyle : {
 			color : 'black',
-			fontSize : 25,
+			fontSize : 20,
 			bold : true,
 			fontName : 'Arial'
 		},
 		chartArea : {
-			left : '15%',
+			left : '10%',
+			right : '20%',
 			top : '15%',
 			bottom : '15%'
 		},
-
+		backgroundColor: {
+         fill: '#FDEADA',
+         stroke:'blue',
+       	strokeWidth:0
+		},
 		/*
 		 * データ行にとって、スタイルを定義できる。
 		 * もともと棒グラフですが、以下は｛0,1,2｝の行（または応募トレンド、採用予定、採用数）を別なグラフ種類に設定できる。
@@ -175,19 +151,31 @@ function drawChart2() {
 		},
 		isStacked : true, // 積み立て
 		bar : {
-			groupWidth : '50%' // 棒の広さ
+			groupWidth : '30%' // 棒の広さ
 		},
 		hAxis : {
-			// title : '月ごと',
-			slantedText : true,
 			titleTextStyle : {
-				color : 'black',
-				fontSize : 18,
+				color : '#757575',
+				fontSize : 12,
 				bold : true
 			}
 		},
 		vAxis : {
 			title : '人数 （人）',
+			titleTextStyle : {
+				color : '#757575',
+				fontSize : 12,
+				bold : true
+			}
+		},
+		legend : {
+			textStyle: {
+				color: '#757575',
+//				fontName: ,
+				fontSize: 10,
+				bold : false,
+				italic : false
+			}
 		},
 		animation : {
 			duration : 1000,
@@ -205,12 +193,41 @@ function drawChart2() {
 	};
 
 	var chart = new google.visualization.ComboChart(document
-			.getElementById('chart_div2'));
+			.getElementById('chart_div'));
+	chart.draw(data, options);
+}
+
+//
+// =========================================================================
+// CHART１: DEFAULT CHART
+// =========================================================================
+function drawChart1() {
+	var data = new google.visualization.DataTable(jsonData);
+
+	var options = {
+		title : '応募～採用状態',
+		seriesType : 'bars',
+		series : {
+			0 : {
+				type : 'area',
+			},
+			1 : {
+				type : 'line',
+			},
+			2 : {
+				type : 'line',
+			}
+		},
+		isStacked : true, // 積み立て
+	};
+
+	var chart = new google.visualization.ComboChart(document
+			.getElementById('chart_div1'));
 	chart.draw(data, options);
 }
 
 // =========================================================================
-// CHART3: COMBO CHART
+// CHART3: STYLE #3 CHART
 // =========================================================================
 function drawChart3() {
 	var data = new google.visualization.DataTable(jsonData);
@@ -295,7 +312,7 @@ function drawChart3() {
 }
 
 // =========================================================================
-// CHART4: COMBO CHART
+// CHART4:  STYLE  4 CHART
 // =========================================================================
 function drawChart4() {
 	var data = new google.visualization.DataTable(jsonData);
@@ -393,7 +410,7 @@ function drawChart4() {
 
 
 //=========================================================================
-//CHART5: COMBO CHART
+//CHART5:  STYLE #5 CHART
 //=========================================================================
 function drawChart5() {
 	var data = new google.visualization.DataTable(jsonData);
