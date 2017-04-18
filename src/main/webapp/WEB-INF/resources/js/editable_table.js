@@ -169,8 +169,8 @@ document.addEventListener("DOMContentLoaded", function() {
 		} ],
 		colHeaders : true,
 		colHeaders : colHeaders,
-		width: 968,
-	    height: getHight(),
+		width: 928,
+	    height: getHight(dataObject),
 //	    colWidths: 90,
 //	    rowHeights: 23,
 		// contextMenu: true,
@@ -190,7 +190,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 	// create table
 	var container = document.getElementById('table_div1');
-	var hot = new Handsontable(container, setting);
+	hot = new Handsontable(container, setting);
 	
 	
 	
@@ -315,6 +315,10 @@ document.addEventListener("DOMContentLoaded", function() {
 		} ],
 		colHeaders : true,
 		colHeaders : colHeaders2,
+		width: 928,
+	    height: getHight(dataObject2),
+//	    colWidths: 90,
+//	    rowHeights: 23,
 		// contextMenu: true,
 
 		cells : function(row, col, prop) {
@@ -334,7 +338,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 	// create table
 	var container2 = document.getElementById('table_div2');
-	var hot2 = new Handsontable(container2, setting2);
+	hot2 = new Handsontable(container2, setting2);
 	
 	
 	
