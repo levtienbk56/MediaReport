@@ -69,6 +69,12 @@ button.shop-detail {
 div.panel-body{
 	padding: 0;
 }
+
+div.chart-note{
+	padding-top: 10px;
+	border: 1px solid #f00;
+    background-color: #FDEADA;
+}
 </style>
 
 
@@ -79,13 +85,8 @@ div.panel-body{
 			<h2 style="text-align: center">（本部）分析TOP</h2>
 		</div>
 	</div>
-	<hr />
-	<br />
 
 	<div class="panel panel-primary">
-		<div class="panel-heading">
-			<h4 id="chart">メンインブラック</h4>
-		</div>
 		<div class="panel-body">
 			<div class="sumary inline">
 				<p class="center">媒体応募状況</p>
@@ -101,6 +102,44 @@ div.panel-body{
 	<hr />
 	<br />
 	
+	
+	<div class="row">
+		<div>
+			<h2 style="text-align: center">（本部）媒体分析</h2>
+		</div>
+	</div>
+	<div class="panel panel-primary">
+		<div class="panel-body">
+			<div class="inline">
+				<div id="chart_div_pie"></div>
+				<div class="chart-note"><p>シェアの少ない媒体に関しては見直しをしても良いでしょう。</p></div>
+			</div>
+			<div class="inline" style="margin-left:36px;">
+				<div id="chart_div_line"></div>
+				<div class="chart-note"><p>平均して応募者の少ない媒体に関しては見直しが必要です。</p></div>
+			</div>
+		</div>
+	</div>
+	<hr />
+	<br />
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="row">
+		<div>
+			<h2 style="text-align: center">スタイル比較</h2>
+		</div>
+	</div>
 	<div class="panel panel-primary">
 		<div class="panel-heading">
 			<h4 id="chart1">デフォルト設定</h4>

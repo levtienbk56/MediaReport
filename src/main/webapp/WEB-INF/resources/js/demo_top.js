@@ -23,6 +23,8 @@ var default_colors2 = ['#00BCD4', '#FFF59D', '#FDD835', '#BCAAA4', '#795548', '#
 // === responsive graph ===
 $(window).resize(function() {
 	drawChart();
+	drawPieChart();
+	drawLineChart();
 	drawChart1();
 	drawChart3();
 	drawChart4();
@@ -31,33 +33,13 @@ $(window).resize(function() {
 
 // draw chart when resource is loaded
 google.setOnLoadCallback(drawChart);
+google.setOnLoadCallback(drawPieChart);
+google.setOnLoadCallback(drawLineChart);
 google.setOnLoadCallback(drawChart1);
 google.setOnLoadCallback(drawChart3);
 google.setOnLoadCallback(drawChart4);
 google.setOnLoadCallback(drawChart5);
 
-// ========================== JSON DATA DEMO ================================
-// {
-// cols: [{id: 'A', label: 'NEW A', type: 'string'},
-// {id: 'B', label: 'B-label', type: 'number'},
-// {id: 'C', label: 'C-label', type: 'date'}
-// ],
-// rows: [{c:[{v: 'a'},
-// {v: 1.0, f: 'One'},
-// {v: new Date(2008, 1, 28, 0, 31, 26), f: '2/28/08 12:31 AM'}
-// ]},
-// {c:[{v: 'b'},
-// {v: 2.0, f: 'Two'},
-// {v: new Date(2008, 2, 30, 0, 31, 26), f: '3/30/08 12:31 AM'}
-// ]},
-// {c:[{v: 'c'},
-// {v: 3.0, f: 'Three'},
-// {v: new Date(2008, 3, 30, 0, 31, 26), f: '4/30/08 12:31 AM'}
-// ]}
-// ],
-// p: {foo: 'hello', bar: 'world!'}
-// }
-//
 // same CSV file
 var jsonData = {
         "cols": [
@@ -194,6 +176,100 @@ function drawChart() {
 
 	var chart = new google.visualization.ComboChart(document
 			.getElementById('chart_div'));
+	chart.draw(data, options);
+}
+
+//
+//=========================================================================
+//CHART: Pie CHART
+//=========================================================================
+function drawPieChart() {
+
+    var data = google.visualization.arrayToDataTable([
+      ['媒体', '応募者'],
+      ['A媒体', 11],
+      ['B媒体', 7],
+      ['C媒体', 4],
+      ['D媒体', 2],
+      ['E媒体', 1]
+    ]);
+
+    var options = {
+      title: '媒体別シェア',
+      titleTextStyle : {
+			color : 'black',
+			fontSize : 15,
+			bold : true,
+			fontName : 'Arial'
+      },
+      height : 300,
+      width : 450,
+      chartArea:{
+      	left : '20%',
+        right : '0%',
+        top : '10%',
+        bottom : '0%'
+      },
+      backgroundColor: {
+     		fill: '#FDEADA',
+       },
+       pieHole: 0.4,
+	  };
+
+    var chart = new google.visualization.PieChart(document.getElementById('chart_div_pie'));
+
+    chart.draw(data, options);
+  }
+function drawLineChart() {
+	var data={
+	 cols :[
+	      {label:"月", type:"string"},
+	      {label:"A媒体", type:"number"},
+	      {label:"B媒体", type:"number"},
+	      {label:"C媒体", type:"number"},
+	      {label:"D媒体", type:"number"}
+	  ],
+	  rows:[
+	      {c:[{v:"2016年10月"},{v: 107},{v: 96},{v: 18},{v: 11}]},
+	      {c:[{v:"11月"},{v: 113},{v: 98},{v: 28},{v: 6}]},
+	      {c:[{v:"12月"},{v: 115},{v: 83},{v: 31},{v: 8}]},
+	      {c:[{v:"2017年01月"},{v: 100},{v: 80},{v: 33},{v: 14}]},
+	      {c:[{v:"02月"},{v: 117},{v: 87},{v: 34},{v: 5}]},
+	      {c:[{v:"03月"},{v: 110},{v: 93},{v: 19},{v: 17}]}
+	  ]
+	};
+	var data = new google.visualization.DataTable(data);
+	
+	var options = {
+		title: '応募者数比較',
+		titleTextStyle : {
+			color : 'black',
+			fontSize : 15,
+			bold : true,
+			fontName : 'Arial'
+		},
+	    height: 300,
+	    width: 450,
+	    chartArea: {
+	    	left: '10%',
+		    right: '5%',
+		    top: '15%',
+		    bottom: '25%'
+	    },
+	    backgroundColor: {
+	    	fill: '#FDEADA',
+	    },
+	    vAxis: {
+	    	title: '人数（人）'
+	    },
+	    legend: {
+	    	position: 'bottom'
+	    },
+	    pointSize: 5,
+	
+	};
+	
+	var chart = new google.visualization.LineChart(document.getElementById('chart_div_line'));
 	chart.draw(data, options);
 }
 
